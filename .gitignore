@@ -1,0 +1,15 @@
+# dependencies (the site itself needs none — this is for tooling)
+node_modules/
+package-lock.json
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# logs & local env
+*.log
+.env
+.env.local

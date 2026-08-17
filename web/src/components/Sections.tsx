@@ -1,4 +1,6 @@
-import { PLANS, TESTIMONIALS, RESULTS, POSTS, GAMES, STATS } from "@/lib/content";
+import Link from "next/link";
+import { PLANS, TESTIMONIALS, RESULTS, GAMES, STATS } from "@/lib/content";
+import { POSTS } from "@/lib/posts";
 
 /* --------------------------------------------------------------- shared */
 
@@ -271,14 +273,14 @@ export function Notes() {
             <p className="eyebrow mb-2">Notes</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl">Things I keep having to explain</h2>
           </div>
-          <a href="/blog" className="text-sm font-extrabold uppercase tracking-widest text-igj_pink">
+          <Link href="/blog" className="text-sm font-extrabold uppercase tracking-widest text-igj_pink">
             All notes →
-          </a>
+          </Link>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {POSTS.map((p) => (
-            <a key={p.slug} href={`/blog/${p.slug}`} className="card group flex flex-col overflow-hidden hover:border-igj_pink">
+            <Link key={p.slug} href={`/blog/${p.slug}`} className="card group flex flex-col overflow-hidden hover:border-igj_pink">
               <div
                 className="aspect-video w-full bg-igj_lightgray bg-cover bg-center dark:bg-igj_dark_bg_alt"
                 style={{ backgroundImage: `url(${p.image})` }}
@@ -293,7 +295,7 @@ export function Notes() {
                 <p className="flex-1 text-sm leading-6 text-igj_darkgray dark:text-igj_dark_text_muted">{p.excerpt}</p>
                 <span className="mt-4 text-[11px] font-extrabold uppercase tracking-widest text-igj_pink">Read it →</span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

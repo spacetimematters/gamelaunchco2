@@ -82,8 +82,19 @@ both light and dark:
 - theme resolves from system preference and from the persisted toggle, applied
   before first paint
 
+## Blog
+
+| Route | Rendering |
+|---|---|
+| `/blog` | static — index of all posts |
+| `/blog/[slug]` | SSG via `generateStaticParams`, one HTML file per post |
+
+All three articles live in `src/lib/posts.tsx` as typed data with JSX bodies,
+so the article layout controls typography rather than each post carrying its
+own markup. Adding a post means adding one object to that array — the index,
+the home-page teasers, the static params and the "keep reading" cross-links
+all read from it. An unknown slug returns a real 404.
+
 ## Not done yet
 
-- **The blog post pages** (`/blog`, `/blog/[slug]`) are linked but not built.
-  The three articles exist in full in the static site at the repo root.
-- **No real assets** — see above.
+- **No real assets** — see the table above.

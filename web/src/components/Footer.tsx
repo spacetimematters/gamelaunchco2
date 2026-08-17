@@ -1,3 +1,4 @@
+import Link from "next/link";
 const NAV = [
   { title: "Work", links: [["Ways to work", "#plans"], ["Results", "#results"], ["What devs say", "#proof"]] },
   { title: "More", links: [["Notes", "/blog"], ["About Joel", "#about"], ["Contact", "#contact"]] },
@@ -28,10 +29,17 @@ export default function Footer() {
                   {col.title}
                 </h3>
                 {col.links.map(([label, href]) => (
-                  <a key={label} href={href}
-                     className="block py-1 text-sm text-igj_darkgray transition-colors duration-300 hover:text-igj_pink dark:text-igj_dark_text_muted">
-                    {label}
-                  </a>
+                  href.startsWith("/") ? (
+                    <Link key={label} href={href}
+                          className="block py-1 text-sm text-igj_darkgray transition-colors duration-300 hover:text-igj_pink dark:text-igj_dark_text_muted">
+                      {label}
+                    </Link>
+                  ) : (
+                    <a key={label} href={href}
+                       className="block py-1 text-sm text-igj_darkgray transition-colors duration-300 hover:text-igj_pink dark:text-igj_dark_text_muted">
+                      {label}
+                    </a>
+                  )
                 ))}
               </div>
             ))}

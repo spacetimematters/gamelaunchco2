@@ -113,34 +113,3 @@ export const RESULTS = [
   { name: "Bright Hollow", result: "Reveal moved out of a crowded week. 3× the reach." },
   { name: "Nightmarket", result: "Four platforms cut to one. Cost per wishlist fell 68%." },
 ];
-
-/* Joel's own posts. */
-export const POSTS = [
-  {
-    slug: "friend-slop",
-    category: "Game Design",
-    date: "15 Jan 2026",
-    readTime: "12 min",
-    image: "/posts/friend-slop.jpg",
-    title: "The $10 Board Game: Why ‘Friend Slop’ Is The Highest ROI Niche In Gaming",
-    excerpt: "Stop building “Live Services” and start building digital board games. Why $10 co-op is the highest ROI niche in gaming, and how the Closet Framework makes your players market for you.",
-  },
-  {
-    slug: "streamers",
-    category: "Game Marketing",
-    date: "15 Jan 2026",
-    readTime: "5 min",
-    image: "/posts/streamers.jpg",
-    title: "How To Get 100+ Streamers To Play Your Game (For $0)",
-    excerpt: "All you need is 1% of 1 million views to wishlist or buy your game for you to make $10,000. Here is the three-tier system that gets you there without a budget.",
-  },
-  {
-    slug: "discord",
-    category: "Game Marketing",
-    date: "14 Jan 2026",
-    readTime: "6 min",
-    image: "/posts/discord.jpg",
-    title: "Why 1,000 Discord Members Are Worth More Than 100k Twitter Impressions",
-    excerpt: "Stop renting attention on social media. Why Discord is the highest leverage asset in gaming, and how the Campfire Framework turns your players into your sales team.",
-  },
-];

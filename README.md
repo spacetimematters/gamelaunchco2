@@ -80,8 +80,11 @@ real audience:
   `rowan@wayfinder.gg`, and the footer company line.
 - **Testimonials** — twelve quotes with fabricated names and companies.
 - **Case studies** — six projects with fabricated result numbers.
-- **Press bar** — six invented publications. Real publication logos are
-  trademarks; only list outlets that actually covered you.
+- **Press bar** — six fictional outlets (Lootline, Playhead, GameDev Q,
+  Beacon, Cartographr, 16Bits), deliberately named so none reads as a real
+  publication. Real publication logos are trademarks, and a press bar you
+  haven't earned is a false-endorsement claim — only list outlets that
+  actually covered you, or delete the section.
 - **Bio stats** — "60+ studios", "$140M", "11 yrs".
 - **Prices and tier terms.**
 - **Blog teasers** and the newsletter's "6,400 developers".

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameLaunch — I make indie games go viral</title>
+<meta name="description" content="Editing, thumbnails and research behind 200M+ views, and sponsored campaigns for 180+ indie games. If you built something worth playing, the problem isn't the game.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="styles.css">
+<script>
+  /* Runs before first paint so the stored terrain never flashes the wrong one. */
+  try {
+    var t = localStorage.getItem('site-theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128506;</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================ NAV -->
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a class="brand" href="#top" aria-label="GameLaunch — home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect class="mark-a" x="2" y="2" width="13" height="13" rx="2"/>
+        <rect class="mark-b" x="17" y="2" width="13" height="13" rx="2"/>
+        <rect class="mark-b" x="2" y="17" width="13" height="13" rx="2"/>
+        <rect class="mark-a" x="17" y="17" width="13" height="13" rx="2"/>
+      </svg>
+      <span class="brand__text">GameLaunch<span class="brand__dot">.</span></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#packages">Work</a>
+      <a href="#proof">Proof</a>
+      <a href="#quests">Results</a>
+      <a href="blog/">Notes</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode" aria-pressed="false">
+        <span class="theme-toggle__track" aria-hidden="true">
+          <svg class="theme-toggle__icon theme-toggle__icon--day" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--night" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg>
+          <span class="theme-toggle__thumb"></span>
+        </span>
+      </button>
+      <a class="btn btn--sm btn--ghost" href="#packages"><span class="btn__long">Send me your game</span><span class="btn__short" aria-hidden="true">Say hi</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ HERO -->
+<section class="hero" id="top">
+
+  <!-- Day / night hero artwork. Same pattern as the reference build: two
+       images swapped by theme. Drop 2560x1440-ish files in and they take
+       over; until then the CSS gradient behind stands in. -->
+  <div class="hero__art hero__art--day" aria-hidden="true">
+    <img src="assets/hero-day.jpg" alt="" onerror="this.remove()">
+  </div>
+  <div class="hero__art hero__art--night" aria-hidden="true">
+    <img src="assets/hero-night.jpg" alt="" onerror="this.remove()">
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="shell hero__inner">
+    <div class="hero__panel">
+    <p class="eyebrow eyebrow--onart">Short-form that makes indie games move</p>
+    <h1 class="hero__title">
+      You made the game.<br>
+      <span class="hero__title-accent">Nobody saw it.</span>
+    </h1>
+    <div class="hero__title-rule" aria-hidden="true"></div>
+    <p class="hero__sub">
+      I'm Joel. I do the editing, the thumbnails and the research behind 200M+ views, and I've
+      run sponsored campaigns for 180+ indie games. If you built something worth playing, the
+      problem was never the game — it's that it never reached the people who'd love it.
+    </p>
+    <div class="hero__cta">
+      <a class="btn btn--primary btn--lg" href="#packages">
+        Send me your game
+        <svg class="ico ico--sm" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>
+      </a>
+      <p class="hero__cta-note">DMs are open, and I actually read them.</p>
+    </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ BIO -->
+<section class="bio section" id="guide">
+  <div class="shell bio__grid">
+
+    <div class="bio__portrait">
+      <div class="portrait">
+        <!-- Replace portrait.jpg with a real photo of Joel; the single photographic element on the page -->
+        <img src="assets/portrait.jpg" alt="Joel" width="520" height="620" loading="lazy" onerror="this.closest('.portrait').classList.add('portrait--placeholder')">
+        <div class="portrait__fallback" aria-hidden="true">
+          <svg viewBox="0 0 200 240">
+            <rect width="200" height="240" rx="8" class="pf-bg"/>
+            <circle cx="100" cy="92" r="38" class="pf-shape"/>
+            <path d="M30 240 C30 172 62 146 100 146 C138 146 170 172 170 240 Z" class="pf-shape"/>
+          </svg>
+          <span>portrait.jpg</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio__body">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Who you'd be working with</p>
+      <h2 class="h2">I'm Joel. I'm the machine behind the views.</h2>
+      <p class="lede">
+        Editing, thumbnails, and the research that decides what gets made in the first place —
+        that's my half. 200M+ views of it, and sponsored campaigns for 180+ indie games.
+      </p>
+      <p>
+        I met Andy on Instagram eight years ago. We bonded over the games we both played and
+        never really stopped; he's the voice on camera, a Twitch and YouTube Partner posting as
+        AndySlaps, and I build everything around him. Our newest channel did 15M+ views in its
+        first 90 days, and honestly I'm having more fun than I've ever had.
+      </p>
+      <p>
+        What that means for you: I'm not an agency and there's no account manager. You get the
+        person who cuts the video, tests the thumbnail, and can tell you in one watch whether
+        your game has a hook worth building a campaign on.
+      </p>
+
+      <figure class="pullquote">
+        <svg class="pullquote__mark" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 297" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 297 297"> <g> <path d="m217.412,157.164c-8.192-10.477-20.802-17.199-34.922-17.199-24.63,0-44.668,20.461-44.668,45.611 0,17.755 12.837,38.291 38.154,61.039 17.841,16.03 35.43,27.372 36.17,27.848 1.605,1.029 3.435,1.544 5.266,1.544 1.831,0 3.662-0.515 5.266-1.544 0.741-0.476 18.328-11.817 36.17-27.849 25.315-22.748 38.152-43.284 38.152-61.038 0-25.15-20.037-45.611-44.667-45.611-14.119,0-26.729,6.723-34.921,17.199z"></path> <path d="m133.352,223.009c-8.03-12.849-12.103-25.442-12.103-37.433 0-34.288 27.473-62.185 61.241-62.185 12.693,0 24.795,3.922 34.922,11.088 10.126-7.166 22.227-11.088 34.921-11.088 5.253,0 10.352,0.677 15.22,1.944 4.259-10.244 6.409-20.005 6.409-29.244 0-41.41-32.911-75.099-73.363-75.099-27.17,0-50.936,15.194-63.616,37.721-12.68-22.526-36.448-37.721-63.62-37.721-40.453,0.001-73.363,33.69-73.363,75.1 0,29.981 22.491,65.396 66.85,105.262 32.026,28.784 63.54,49.109 64.866,49.961 1.605,1.03 3.437,1.545 5.267,1.545 1.831,0 3.663-0.515 5.268-1.545 0.403-0.259 3.613-2.331 8.766-5.882-7.21-7.66-13.125-15.163-17.665-22.424z"></path> </g> </svg>
+        <blockquote>
+          If you're a dev with a game you believe in, or a brand that wants to collab —
+          the DMs are open, and I actually read them.
+        </blockquote>
+      </figure>
+
+      <ul class="bio__stats">
+        <li><strong>200M+</strong><span>views built</span></li>
+        <li><strong>180+</strong><span>games campaigned</span></li>
+        <li><strong>15M+</strong><span>in one channel's first 90 days</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TRUST BAR -->
+<section class="trustbar" aria-label="Games worked on">
+  <div class="shell">
+    <!-- PLACEHOLDER TITLES. All six games are fictional. Swap in real titles you
+         have permission to name, or delete the section — a logo bar you haven't
+         earned is an endorsement claim. -->
+    <p class="trustbar__label">A few of the 180+</p>
+    <ul class="trustbar__logos">
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Hollowfen (placeholder)"><text x="4" y="23" class="logo-type">HOLLOWFEN</text></svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Ashvault (placeholder)"><text x="4" y="23" class="logo-type">ASHVAULT</text></svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Tin Compass (placeholder)"><text x="4" y="23" class="logo-type">TIN COMPASS</text></svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Nightmarket (placeholder)"><text x="4" y="23" class="logo-type">NIGHTMARKET</text></svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Saltpetre (placeholder)"><text x="4" y="23" class="logo-type">SALTPETRE</text></svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Wrenlight (placeholder)"><text x="4" y="23" class="logo-type">WRENLIGHT</text></svg>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+    <path d="M0 12 H520" class="divider__line"/>
+    <path d="M600 2 L610 12 L600 22 L590 12 Z" class="divider__gem"/>
+    <path d="M680 12 H1200" class="divider__line"/>
+  </svg>
+</div>
+
+<!-- ============================================================ PACKAGES -->
+<section class="section packages" id="packages">
+  <div class="shell">
+    <header class="section-head section-head--center">
+      <p class="eyebrow">How can I help you?</p>
+      <div class="head-ornament">
+        <span class="head-ornament__rule" aria-hidden="true">
+          <svg viewBox="0 0 220 22" preserveAspectRatio="none">
+            <path class="orn-line" d="M0 11 H150"/>
+            <path class="orn-gem" d="M162 11 L172 2 L182 11 L172 20 Z"/>
+            <path class="orn-gem" d="M186 11 L196 2 L206 11 L196 20 Z"/>
+          </svg>
+        </span>
+        <h2>Three ways to work together</h2>
+        <span class="head-ornament__rule" aria-hidden="true">
+          <svg viewBox="0 0 220 22" preserveAspectRatio="none">
+            <path class="orn-gem" d="M14 11 L24 2 L34 11 L24 20 Z"/>
+            <path class="orn-gem" d="M38 11 L48 2 L58 11 L48 20 Z"/>
+            <path class="orn-line" d="M70 11 H220"/>
+          </svg>
+        </span>
+      </div>
+      <p class="section-head__sub">
+        Same person doing the work either way — what changes is how long I'm on it. Every one
+        starts with me actually playing your game and telling you straight whether I can move it.
+      </p>
+    </header>
+
+    <div class="tiers">
+
+      <!-- EPIC -->
+      <article class="tier tier--epic">
+        <div class="tier__emblem" aria-hidden="true">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="em-main" d="M27 4 L12 27 h9 l-3 17 L36 21 h-9 Z"/>
+          </svg>
+        </div>
+        <h3 class="tier__rarity">Epic</h3>
+        <p class="tier__scope">One game &middot; one campaign</p>
+        <p class="tier__blurb">One game, one campaign. The clearest way to find out what your game does in the wild.</p>
+        <ul class="tier__list">
+          <li>I play it and find the hook</li>
+          <li>Short-form cut for the drop</li>
+          <li>Thumbnail built and tested</li>
+          <li>Posted across the channels</li>
+          <li>Numbers back, no spin</li>
+        </ul>
+        <a class="btn" href="mailto:hello@gamelaunch.co">More info</a>
+        <p class="tier__foot">A few slots a month</p>
+      </article>
+
+      <!-- LEGENDARY -->
+      <article class="tier tier--legendary tier--popular">
+        <p class="tier__flag">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8Z"/></svg>
+          Most chosen
+        </p>
+        <div class="tier__emblem" aria-hidden="true">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="em-main" d="M24 6 C20 14 20 20 24 26 C28 20 28 14 24 6 Z"/>
+            <path class="em-main" d="M22 27 C14 22 8 24 4 30 C11 33 17 32 22 28 Z"/>
+            <path class="em-main" d="M26 27 C34 22 40 24 44 30 C37 33 31 32 26 28 Z"/>
+            <path class="em-main" d="M24 29 L27 42 L24 39 L21 42 Z"/>
+          </svg>
+        </div>
+        <h3 class="tier__rarity">Legendary</h3>
+        <p class="tier__scope">Ongoing &middot; month to month</p>
+        <p class="tier__blurb">A run of content around your beats — announce, demo, launch — instead of one shot in the dark.</p>
+        <ul class="tier__list">
+          <li>Everything in <strong>Epic</strong>, repeatedly</li>
+          <li>Content mapped to your beats</li>
+          <li>Thumbnail and hook iteration</li>
+          <li>What worked, fed into the next cut</li>
+          <li>Direct line to me, not a queue</li>
+          <li>Launch week covered properly</li>
+        </ul>
+        <a class="btn" href="mailto:hello@gamelaunch.co">More info</a>
+        <p class="tier__foot">Two games at a time, so it stays good</p>
+      </article>
+
+      <!-- MYTHICAL -->
+      <article class="tier tier--mythical">
+        <div class="tier__emblem" aria-hidden="true">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="em-main" d="M24 3 C29 12 35 15 35 24 C35 32 30 38 24 45 C18 38 13 32 13 24 C13 15 19 12 24 3 Z"/>
+            <path class="em-core" d="M24 20 C26 25 29 27 29 31 C29 35 27 38 24 41 C21 38 19 35 19 31 C19 27 22 25 24 20 Z"/>
+          </svg>
+        </div>
+        <h3 class="tier__rarity">Mythical</h3>
+        <p class="tier__scope">Custom quote</p>
+        <p class="tier__blurb">For publishers and brands with a slate. I take the whole cycle, not one title at a time.</p>
+        <ul class="tier__list">
+          <li>Everything in <strong>Legendary</strong></li>
+          <li>Sequencing across your whole slate</li>
+          <li>Creator briefs your partners can follow</li>
+          <li>Your team trained on the process</li>
+          <li>First look at what's landing right now</li>
+          <li>Long-term, not campaign by campaign</li>
+        </ul>
+        <a class="btn" href="mailto:hello@gamelaunch.co">More info</a>
+        <p class="tier__foot">One open slot</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider divider--wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+    <path d="M0 24 C160 4 300 36 480 22 C660 8 780 34 960 24 C1140 14 1280 32 1440 18" fill="none"/>
+  </svg>
+</div>
+
+<!-- ============================================================ TESTIMONIAL WALL -->
+<section class="section proof" id="proof">
+  <div class="shell">
+    <header class="section-head">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Fellow travellers</p>
+      <h2 class="h2">Devs who let me near their game</h2>
+      <p class="section-head__sub">Studio leads, solo devs, and one very tired publishing director.</p>
+    </header>
+
+    <div class="wall">
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>He played the whole thing before he cut a frame. You can tell — the video sells the game we actually made.</blockquote>
+        <figcaption><strong>Mara Ostrowska</strong><span>Creative Director, Hollowfen</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Two thumbnails. One did 40k, the other did 2.1M. Same video. That's the whole job, and he just knows.</blockquote>
+        <figcaption><strong>Devin Achebe</strong><span>Founder, Two Lantern Studio</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>I've paid agencies ten times this for content nobody watched. Joel's first cut outperformed all of it.</blockquote>
+        <figcaption><strong>Priya Raghunathan</strong><span>COO, Nightmarket Interactive</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>He told me my game didn't have a hook yet and to come back after the update. He was right, and it cost him the booking.</blockquote>
+        <figcaption><strong>Jonas Vikström</strong><span>Marketing Lead, Ashvault</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Wishlists went from 300 a week to 9,000 in the four days after the video went up.</blockquote>
+        <figcaption><strong>Elena Marchetti</strong><span>CEO, Saltpetre Collective</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="4 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star star--empty" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Fast, blunt, occasionally hard to reach mid-edit. Worth it every time the numbers land.</blockquote>
+        <figcaption><strong>Tomás Reyes</strong><span>Solo dev, Verdigris</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Twelve years in publishing and I still took notes on how he structures the first three seconds.</blockquote>
+        <figcaption><strong>Karin Boedeker</strong><span>Publishing Director, Grauwald</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>We'd been posting our own clips for a year. He explained in one call why none of them opened properly.</blockquote>
+        <figcaption><strong>Ade Ogunleye</strong><span>Studio Head, Bright Hollow</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>No account manager, no deck, no upsell. The person who cuts the video is the person on the call.</blockquote>
+        <figcaption><strong>Hana Little</strong><span>Producer, Ninefold</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Second game outsold the first by 7× on a smaller budget. Same team, better content.</blockquote>
+        <figcaption><strong>Lukas Brenner</strong><span>Co-founder, Tin Compass</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>He sent the numbers that underperformed without me asking. That's when I knew I'd keep working with him.</blockquote>
+        <figcaption><strong>Siobhán Kelly</strong><span>Director, Wrenlight</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>I came for the views. I stayed because someone finally told me the truth about our trailer.</blockquote>
+        <figcaption><strong>Yuki Tanabe</strong><span>Art Director, Paper Lantern</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+    <path d="M0 12 H500" class="divider__line"/>
+    <path d="M560 20 L580 4 L600 20 Z" class="divider__tri"/>
+    <path d="M600 20 L620 4 L640 20 Z" class="divider__tri divider__tri--alt"/>
+    <path d="M700 12 H1200" class="divider__line"/>
+  </svg>
+</div>
+
+<!-- ============================================================ CASE STUDIES -->
+<section class="section quests" id="quests">
+  <div class="shell">
+    <header class="section-head">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Completed quests</p>
+      <h2 class="h2">What the numbers did</h2>
+      <p class="section-head__sub">Six games, six very different problems.</p>
+    </header>
+
+    <div class="quest-grid">
+
+      <a class="quest" href="#">
+        <span class="quest__sigil" aria-hidden="true">01</span>
+        <h3 class="quest__name">Hollowfen</h3>
+        <p class="quest__result">One video, 4.2M views. Wishlists 4k → 61k in eight weeks.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="quest" href="#">
+        <span class="quest__sigil" aria-hidden="true">02</span>
+        <h3 class="quest__name">Ashvault</h3>
+        <p class="quest__result">Thumbnail rebuilt and retested. Click-through 2.1% → 9.4%.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="quest" href="#">
+        <span class="quest__sigil" aria-hidden="true">03</span>
+        <h3 class="quest__name">Saltpetre Collective</h3>
+        <p class="quest__result">Told them to cut the ad spend and ship a demo instead. Funnel tripled.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="quest" href="#">
+        <span class="quest__sigil" aria-hidden="true">04</span>
+        <h3 class="quest__name">Tin Compass</h3>
+        <p class="quest__result">Second title outsold the first 7× on 40% of the budget.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="quest" href="#">
+        <span class="quest__sigil" aria-hidden="true">05</span>
+        <h3 class="quest__name">Bright Hollow</h3>
+        <p class="quest__result">Reveal moved out of a crowded week. 3× the reach.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="quest" href="#">
+        <span class="quest__sigil" aria-hidden="true">06</span>
+        <h3 class="quest__name">Nightmarket</h3>
+        <p class="quest__result">Four platforms cut to one. Cost per wishlist fell 68%.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ DISPATCHES -->
+<section class="section dispatches" id="dispatches">
+  <div class="shell">
+    <header class="section-head section-head--row">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__rule"></span> Notes</p>
+        <h2 class="h2">Things I keep having to explain</h2>
+      </div>
+      <a class="link-arrow" href="blog/">All notes <svg class="ico ico--sm" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></a>
+    </header>
+
+    <div class="posts">
+
+      <a class="post" href="blog/friend-slop.html">
+        <div class="post__art" aria-hidden="true">
+          <img src="assets/post-friend-slop.jpg" alt="" loading="lazy" onerror="this.remove()">
+        </div>
+        <p class="post__meta"><span class="post__tag">Game Design</span> <span>15 Jan 2026</span> <span>· 12 min read</span></p>
+        <h3 class="post__title">The $10 Board Game: Why &lsquo;Friend Slop&rsquo; Is The Highest ROI Niche In Gaming</h3>
+        <p class="post__excerpt">Stop building &lsquo;Live Services&rsquo; and start building digital board games. Why $10 co-op is the highest ROI niche in gaming, and how the Closet Framework makes your players market for you.</p>
+        <span class="post__link">Read it <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="post" href="blog/streamers.html">
+        <div class="post__art" aria-hidden="true">
+          <img src="assets/post-streamers.jpg" alt="" loading="lazy" onerror="this.remove()">
+        </div>
+        <p class="post__meta"><span class="post__tag">Game Marketing</span> <span>15 Jan 2026</span> <span>· 5 min read</span></p>
+        <h3 class="post__title">How To Get 100+ Streamers To Play Your Game (For $0)</h3>
+        <p class="post__excerpt">All you need is 1% of 1 million views to wishlist or buy your game for you to make $10,000. Here is the three-tier system that gets you there without a budget.</p>
+        <span class="post__link">Read it <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+
+      <a class="post" href="blog/discord.html">
+        <div class="post__art" aria-hidden="true">
+          <img src="assets/post-discord.jpg" alt="" loading="lazy" onerror="this.remove()">
+        </div>
+        <p class="post__meta"><span class="post__tag">Game Marketing</span> <span>14 Jan 2026</span> <span>· 6 min read</span></p>
+        <h3 class="post__title">Why 1,000 Discord Members Are Worth More Than 100k Twitter Impressions</h3>
+        <p class="post__excerpt">Stop renting attention on social media. Why Discord is the highest leverage asset in gaming, and how the Campfire Framework turns your players into your sales team.</p>
+        <span class="post__link">Read it <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="shell newsletter__inner">
+
+    <div class="newsletter__copy">
+      <p class="eyebrow eyebrow--onart"><span class="eyebrow__rule"></span> The signal fire</p>
+      <h2 class="h2">One note. Every other Thursday.</h2>
+      <p>
+        One thing I learned from a live campaign, written the week it happened — what the
+        thumbnail did, what the hook did, what flopped. No roundups, no sponsors, no "5 tips."
+        Leave whenever you like.
+      </p>
+      <form class="signup" id="signupForm" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <div class="signup__row">
+          <input id="email" name="email" type="email" placeholder="you@yourstudio.com" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">Light the beacon</button>
+        </div>
+        <p class="signup__msg" id="signupMsg" role="status"></p>
+      </form>
+    </div>
+</div>
+</section>
+
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <a class="brand" href="#top">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect class="mark-a" x="2" y="2" width="13" height="13" rx="2"/>
+            <rect class="mark-b" x="17" y="2" width="13" height="13" rx="2"/>
+            <rect class="mark-b" x="2" y="17" width="13" height="13" rx="2"/>
+            <rect class="mark-a" x="17" y="17" width="13" height="13" rx="2"/>
+          </svg>
+          <span class="brand__text">GameLaunch<span class="brand__dot">.</span></span>
+        </a>
+        <p class="footer__tagline">Great games don't travel on their own. That's the whole job.</p>
+        <a class="footer__email" href="mailto:hello@gamelaunch.co">hello@gamelaunch.co</a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div>
+          <h3>Work</h3>
+          <a href="#packages">Ways to work</a>
+          <a href="#quests">Results</a>
+          <a href="#proof">What devs say</a>
+        </div>
+        <div>
+          <h3>More</h3>
+          <a href="blog/">Notes</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="#guide">About Joel</a>
+        </div>
+        <div>
+          <h3>The small print</h3>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> GameLaunch. Made between edits.</p>
+      <ul class="socials">
+        <li><a href="#" aria-label="Bluesky">
+          <svg viewBox="0 0 24 24"><path d="M12 10.6C10.8 8.2 7.6 4 5 3.2 2.6 2.5 2 3.6 2 5.2c0 1.5.9 6.3 1.4 7.1.9 1.3 2.4 1.5 3.8 1.2-2.4.4-3 1.9-1.7 3.4 2.6 2.9 3.7-.7 4-1.6.1-.2.1-.3.2-.3.1 0 .1.1.2.3.3.9 1.4 4.5 4 1.6 1.3-1.5.7-3-1.7-3.4 1.4.3 2.9.1 3.8-1.2.5-.8 1.4-5.6 1.4-7.1 0-1.6-.6-2.7-3-2C16.4 4 13.2 8.2 12 10.6Z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM2.8 9h3.4v12H2.8V9ZM9.2 9h3.3v1.7h.05c.46-.85 1.6-1.75 3.25-1.75 3.48 0 4.2 2.2 4.2 5.1V21h-3.4v-5.3c0-1.27-.02-2.9-1.8-2.9-1.8 0-2.1 1.38-2.1 2.8V21H9.2V9Z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="Mastodon">
+          <svg viewBox="0 0 24 24"><path d="M21 9.4c0-4-2.6-5.2-2.6-5.2C17.1 3.6 14.9 3.3 12.6 3.3h-.05c-2.3 0-4.5.3-5.8.9 0 0-2.6 1.2-2.6 5.2 0 .9-.02 2 .01 3.2.1 4 .74 8 4.5 9 1.72.45 3.2.55 4.4.48 2.16-.12 3.38-.77 3.38-.77l-.07-1.57s-1.55.49-3.29.43c-1.72-.06-3.54-.19-3.82-2.3a4.3 4.3 0 0 1-.04-.6s1.69.42 3.83.51c1.31.06 2.54-.07 3.79-.22 2.4-.29 4.48-1.77 4.74-3.12.41-2.13.38-5.2.38-5.2Zm-3.1 5.16h-1.93V9.85c0-1-.42-1.5-1.26-1.5-.93 0-1.4.6-1.4 1.79v2.6h-1.91v-2.6c0-1.19-.47-1.79-1.4-1.79-.84 0-1.26.5-1.26 1.5v4.71H6.8V9.71c0-1 .25-1.79.77-2.37a2.6 2.6 0 0 1 2-.88c.94 0 1.65.36 2.11 1.08l.48.8.48-.8c.46-.72 1.17-1.08 2.11-1.08.8 0 1.47.3 2 .88.51.58.77 1.37.77 2.37v4.85Z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.5 7.2a2.8 2.8 0 0 0-1.95-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.55.5a2.8 2.8 0 0 0-1.95 2C1 9 1 12 1 12s0 3 .5 4.8a2.8 2.8 0 0 0 1.95 2c1.75.5 8.55.5 8.55.5s6.8 0 8.55-.5a2.8 2.8 0 0 0 1.95-2C23 15 23 12 23 12s0-3-.5-4.8ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <defs>
+    <path id="starPath" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8Z"/>
+  </defs>
+</svg>
+
+<script src="main.js"></script>
+</body>
+</html>

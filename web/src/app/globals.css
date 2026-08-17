@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-igj_white text-igj_black dark:bg-igj_dark_bg dark:text-igj_dark_text antialiased; }
+
+  /* Headings follow the reference: extrabold, uppercase, lightly tracked. */
+  h1, h2, h3 { @apply font-extrabold uppercase tracking-wide leading-tight; }
+
+  :focus-visible { @apply outline-none ring-4 ring-igj_pink ring-offset-2 ring-offset-igj_white dark:ring-offset-igj_dark_bg; }
+}
+
+@layer components {
+  .btn-pink {
+    @apply inline-flex w-fit items-center justify-center gap-2 rounded bg-igj_pink px-5 py-2.5
+           text-sm font-extrabold uppercase leading-6 tracking-wide text-igj_white
+           transition-colors duration-300 hover:bg-igj_darkpink sm:px-6 sm:text-base;
+  }
+  .btn-outline {
+    @apply inline-flex w-fit items-center justify-center gap-2 rounded border-2 border-igj_bordergray
+           px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide text-igj_black
+           transition-colors duration-300 hover:border-igj_pink hover:bg-igj_pink hover:text-igj_white
+           dark:border-igj_dark_border dark:text-igj_dark_text sm:text-base;
+  }
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-widest text-igj_darkgray
+           dark:text-igj_dark_text_muted sm:text-sm;
+  }
+  .card {
+    @apply rounded border border-igj_gray bg-igj_white transition-colors duration-300
+           dark:border-igj_dark_border dark:bg-igj_dark_surface;
+  }
+  /* The pennant notch the reference cuts into the bottom of each plan card. */
+  .pennant {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 26px), 0 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}

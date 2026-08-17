@@ -24,10 +24,11 @@
 <header class="nav" id="nav">
   <div class="shell nav__inner">
     <a class="brand" href="#top" aria-label="GameLaunch — home">
-      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-        <path class="mark-shield" d="M4 4 H36 V21 C36 30 28 35 20 38 C12 35 4 30 4 21 Z"/>
-        <path class="mark-chief" d="M4 4 H36 V13 H4 Z"/>
-        <path class="mark-charge" d="M20 15 L26 22 L20 31 L14 22 Z"/>
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect class="mark-a" x="2" y="2" width="13" height="13" rx="2"/>
+        <rect class="mark-b" x="17" y="2" width="13" height="13" rx="2"/>
+        <rect class="mark-b" x="2" y="17" width="13" height="13" rx="2"/>
+        <rect class="mark-a" x="17" y="17" width="13" height="13" rx="2"/>
       </svg>
       <span class="brand__text">GameLaunch<span class="brand__dot">.</span></span>
     </a>
@@ -42,15 +43,8 @@
     <div class="nav__actions">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode" aria-pressed="false">
         <span class="theme-toggle__track" aria-hidden="true">
-          <svg class="theme-toggle__icon theme-toggle__icon--day" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="4.6"/>
-            <g class="rays"><path d="M12 1.4v3M12 19.6v3M1.4 12h3M19.6 12h3M4.5 4.5l2.1 2.1M17.4 17.4l2.1 2.1M19.5 4.5l-2.1 2.1M6.6 17.4l-2.1 2.1"/></g>
-          </svg>
-          <svg class="theme-toggle__icon theme-toggle__icon--night" viewBox="0 0 24 24">
-            <path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1Z"/>
-            <circle cx="17.5" cy="5.5" r="1.1" class="twinkle"/>
-            <circle cx="20.6" cy="9.2" r="0.7" class="twinkle"/>
-          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--day" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--night" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg>
           <span class="theme-toggle__thumb"></span>
         </span>
       </button>
@@ -64,228 +58,23 @@
 <!-- ============================================================ HERO -->
 <section class="hero" id="top">
 
-  <!-- ---------- DAY ART ---------- -->
+  <!-- Day / night hero artwork. Same pattern as the reference build: two
+       images swapped by theme. Drop 2560x1440-ish files in and they take
+       over; until then the CSS gradient behind stands in. -->
   <div class="hero__art hero__art--day" aria-hidden="true">
-    <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="daySky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#DCEAFF"/>
-          <stop offset="34%"  stop-color="#E8F1FF"/>
-          <stop offset="68%"  stop-color="#F2F7FF"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
-        </linearGradient>
-        <radialGradient id="dayGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="1"/>
-          <stop offset="52%"  stop-color="#9CC4FF" stop-opacity=".55"/>
-          <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="dayFar" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#C9D9F0"/><stop offset="100%" stop-color="#AEC3E2"/>
-        </linearGradient>
-        <linearGradient id="dayMid" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#94AECE"/><stop offset="100%" stop-color="#7492B8"/>
-        </linearGradient>
-        <linearGradient id="dayNear" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#4E668A"/><stop offset="100%" stop-color="#2C3B54"/>
-        </linearGradient>
-      </defs>
-
-      <rect width="1440" height="720" fill="url(#daySky)"/>
-
-      <!-- sun -->
-      <circle cx="962" cy="188" r="240" fill="url(#dayGlow)"/>
-      <circle cx="962" cy="188" r="72" fill="#FFFFFF"/>
-      <circle cx="962" cy="188" r="72" fill="none" stroke="#1F51FF" stroke-opacity=".55" stroke-width="2"/>
-
-      <!-- drifting clouds -->
-      <g fill="#FFFFFF" opacity=".7">
-        <ellipse cx="300" cy="150" rx="120" ry="26"/>
-        <ellipse cx="360" cy="132" rx="78"  ry="20"/>
-        <ellipse cx="760" cy="238" rx="96"  ry="20"/>
-        <ellipse cx="1230" cy="120" rx="86" ry="18"/>
-      </g>
-
-      <!-- birds -->
-      <g fill="none" stroke="#5A7398" stroke-width="3" stroke-linecap="round" opacity=".65">
-        <path d="M470 210c8-9 16-9 24 0M494 210c8-9 16-9 24 0"/>
-        <path d="M566 168c6-7 12-7 18 0M584 168c6-7 12-7 18 0"/>
-      </g>
-
-      <!-- far range -->
-      <path fill="url(#dayFar)" d="M0 470 L150 336 L246 404 L376 274 L470 372 L560 300 L664 420 L780 330 L900 436 L1010 366 L1130 458 L1260 380 L1440 486 L1440 720 L0 720 Z"/>
-      <path fill="#FFFFFF" opacity=".95" d="M376 274 L420 320 L400 330 L376 316 L352 332 L332 322 Z"/>
-      <path fill="#FFFFFF" opacity=".9" d="M150 336 L186 374 L168 382 L150 370 L128 384 L112 374 Z"/>
-
-      <!-- mid range -->
-      <path fill="url(#dayMid)" d="M0 560 L120 470 L230 540 L340 452 L448 546 L560 468 L690 566 L810 496 L940 574 L1070 500 L1200 578 L1330 512 L1440 570 L1440 720 L0 720 Z"/>
-
-      <!-- near hills -->
-      <path fill="url(#dayNear)" d="M0 648 C160 596 300 660 430 630 C560 600 640 654 760 640 C880 626 980 584 1110 616 C1240 648 1340 618 1440 640 L1440 720 L0 720 Z"/>
-
-      <!-- winding path -->
-      <path d="M700 720 C700 660 620 650 636 606 C652 562 742 566 754 528 C766 490 706 478 716 452"
-            fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" opacity=".92"/>
-      <path d="M700 720 C700 660 620 650 636 606 C652 562 742 566 754 528 C766 490 706 478 716 452"
-            fill="none" stroke="#9CC4FF" stroke-width="22" stroke-linecap="round"
-            stroke-dasharray="2 26" opacity=".6"/>
-
-      <!-- pines -->
-      <g fill="#233047">
-        <path d="M300 660 L318 700 L282 700 Z M300 636 L314 668 L286 668 Z"/><rect x="296" y="698" width="8" height="16"/>
-        <path d="M360 676 L376 710 L344 710 Z M360 656 L373 682 L347 682 Z"/><rect x="356" y="708" width="8" height="14"/>
-        <path d="M1080 646 L1100 690 L1060 690 Z M1080 620 L1096 656 L1064 656 Z"/><rect x="1076" y="688" width="8" height="18"/>
-        <path d="M1140 668 L1156 704 L1124 704 Z"/><rect x="1136" y="702" width="8" height="14"/>
-      </g>
-
-      <!-- traveller: cloak, pack, wide-brim hat, lantern on the staff -->
-      <g transform="translate(686 616) scale(1.6)">
-        <ellipse cx="0" cy="1" rx="15" ry="3" fill="#233047" opacity=".25"/>
-        <path d="M13 1 L9 -42" stroke="#233047" stroke-width="2.4" stroke-linecap="round"/>
-        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#233047"/>
-        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#233047"/>
-        <circle cx="0" cy="-31" r="4.4" fill="#233047"/>
-        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#233047"/>
-        <circle cx="9" cy="-42" r="3" fill="#1F51FF"/>
-        <circle cx="9" cy="-42" r="6.5" fill="#00C2FF" opacity=".35"/>
-      </g>
-    </svg>
+    <img src="assets/hero-day.jpg" alt="" onerror="this.remove()">
   </div>
-
-  <!-- ---------- NIGHT ART ---------- -->
   <div class="hero__art hero__art--night" aria-hidden="true">
-    <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#10141C"/>
-          <stop offset="42%"  stop-color="#171C26"/>
-          <stop offset="76%"  stop-color="#1D232E"/>
-          <stop offset="100%" stop-color="#263041"/>
-        </linearGradient>
-        <radialGradient id="moonGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#38D6FF" stop-opacity=".42"/>
-          <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#1F51FF" stop-opacity="0"/>
-          <stop offset="30%"  stop-color="#1F51FF" stop-opacity=".34"/>
-          <stop offset="58%"  stop-color="#38D6FF" stop-opacity=".3"/>
-          <stop offset="82%"  stop-color="#4D7CFF" stop-opacity=".18"/>
-          <stop offset="100%" stop-color="#4D7CFF" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="nightFar" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#2E3849"/><stop offset="100%" stop-color="#222A38"/>
-        </linearGradient>
-        <linearGradient id="nightMid" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1B212C"/><stop offset="100%" stop-color="#151A23"/>
-        </linearGradient>
-        <radialGradient id="lanternGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#8FE6FF" stop-opacity=".85"/>
-          <stop offset="45%"  stop-color="#38D6FF" stop-opacity=".32"/>
-          <stop offset="100%" stop-color="#38D6FF" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="fireGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#8FE6FF" stop-opacity=".9"/>
-          <stop offset="45%"  stop-color="#38D6FF" stop-opacity=".42"/>
-          <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-
-      <rect width="1440" height="720" fill="url(#nightSky)"/>
-
-      <!-- aurora ribbons -->
-      <path d="M-40 210 C220 120 420 268 700 190 C980 112 1180 250 1480 168 L1480 262 C1180 344 980 206 700 284 C420 362 220 214 -40 304 Z" fill="url(#aurora)" opacity=".5"/>
-      <path d="M-40 300 C260 236 460 348 760 288 C1060 228 1240 330 1480 276 L1480 322 C1240 376 1060 274 760 334 C460 394 260 282 -40 346 Z" fill="url(#aurora)" opacity=".28"/>
-
-      <!-- stars -->
-      <g fill="#DCE8FF" class="night-stars">
-        <circle cx="80"  cy="72"  r="1.8"/><circle cx="164" cy="140" r="1.2"/><circle cx="248" cy="58"  r="2.1"/>
-        <circle cx="322" cy="188" r="1.3"/><circle cx="404" cy="96"  r="1.7"/><circle cx="470" cy="42"  r="1.1"/>
-        <circle cx="548" cy="152" r="2"/>  <circle cx="628" cy="84"  r="1.4"/><circle cx="702" cy="46"  r="1.8"/>
-        <circle cx="784" cy="128" r="1.2"/><circle cx="858" cy="70"  r="2.2"/><circle cx="936" cy="176" r="1.3"/>
-        <circle cx="1012" cy="60" r="1.6"/><circle cx="1096" cy="140" r="1.1"/><circle cx="1268" cy="196" r="2"/>
-        <circle cx="1252" cy="40" r="1.4"/><circle cx="1330" cy="164" r="1.8"/><circle cx="1400" cy="104" r="1.2"/>
-        <circle cx="120"  cy="236" r="1.3"/><circle cx="360" cy="268" r="1.6"/><circle cx="600" cy="230" r="1.1"/>
-        <circle cx="900"  cy="252" r="1.5"/><circle cx="1150" cy="228" r="1.2"/><circle cx="1380" cy="262" r="1.7"/>
-        <circle cx="200"  cy="340" r="1.1"/><circle cx="520" cy="356" r="1.3"/><circle cx="1040" cy="330" r="1.2"/>
-      </g>
-
-      <!-- constellation: the wayfinder -->
-      <g stroke="#38D6FF" stroke-width="1.4" opacity=".85" fill="none">
-        <path d="M248 58 L322 188 L404 96 L470 42"/>
-        <path d="M322 188 L164 140"/>
-      </g>
-      <g fill="#38D6FF">
-        <circle cx="248" cy="58" r="3"/><circle cx="322" cy="188" r="3"/>
-        <circle cx="404" cy="96" r="3"/><circle cx="470" cy="42" r="2.4"/><circle cx="164" cy="140" r="2.4"/>
-      </g>
-
-      <!-- moon: a true crescent, kept clear of the headline column -->
-      <circle cx="972" cy="140" r="170" fill="url(#moonGlow)"/>
-      <path d="M990 86 A54 54 0 1 0 990 194 A70 70 0 0 1 990 86 Z" fill="#EAF3FF"/>
-      <g fill="#93A7C6" opacity=".55">
-        <circle cx="964" cy="118" r="5.5"/><circle cx="958" cy="158" r="3.4"/><circle cx="975" cy="182" r="2.6"/>
-      </g>
-
-      <!-- far range with moonlit caps -->
-      <path fill="url(#nightFar)" d="M0 498 L128 392 L232 462 L370 320 L468 424 L582 348 L690 456 L820 372 L946 470 L1076 396 L1206 486 L1330 412 L1440 500 L1440 720 L0 720 Z"/>
-      <g fill="#7FA3D6" opacity=".5">
-        <path d="M370 320 L410 362 L392 372 L370 358 L348 374 L330 362 Z"/>
-        <path d="M820 372 L852 406 L836 414 L820 402 L800 416 L786 406 Z"/>
-      </g>
-
-      <!-- mid range -->
-      <path fill="url(#nightMid)" d="M0 588 L140 500 L262 566 L390 486 L510 576 L640 504 L772 588 L900 522 L1032 600 L1160 530 L1290 604 L1440 546 L1440 720 L0 720 Z"/>
-
-      <!-- lake reflection band -->
-      <path fill="#161B24" d="M0 640 L1440 616 L1440 720 L0 720 Z"/>
-      <path fill="#1F2735" opacity=".7" d="M0 640 L1440 616 L1440 660 L0 686 Z"/>
-      <g stroke="#3E4C64" stroke-width="2" stroke-linecap="round" opacity=".85">
-        <path d="M120 668 h90"/><path d="M250 690 h140"/><path d="M470 662 h110"/>
-        <path d="M980 676 h130"/><path d="M1180 700 h96"/><path d="M620 704 h120"/>
-      </g>
-
-      <!-- campfire + tent -->
-      <circle cx="960" cy="614" r="120" fill="url(#fireGlow)"/>
-      <g transform="translate(1010 616)">
-        <path d="M0 0 L-46 0 L-23 -44 Z" fill="#242C3A"/>
-        <path d="M-23 -44 L-23 0" stroke="#38D6FF" stroke-width="2.5" opacity=".8"/>
-        <path d="M-30 0 L-23 -22 L-16 0 Z" fill="#10141C"/>
-      </g>
-      <g transform="translate(960 616)">
-        <path d="M-22 -1 L18 -7" stroke="#37424F" stroke-width="7" stroke-linecap="round"/>
-        <path d="M-18 -7 L22 -2" stroke="#465464" stroke-width="7" stroke-linecap="round"/>
-        <path class="flame" d="M0 -6 C10 -18 6 -26 0 -40 C-6 -26 -10 -18 0 -6 Z" fill="#1F51FF"/>
-        <path class="flame flame--inner" d="M0 -8 C5 -16 3 -21 0 -30 C-3 -21 -5 -16 0 -8 Z" fill="#8FE6FF"/>
-      </g>
-
-      <!-- lantern path -->
-      <g fill="#38D6FF">
-        <circle cx="700" cy="672" r="3.4"/><circle cx="756" cy="654" r="2.6"/>
-        <circle cx="812" cy="640" r="3"/>  <circle cx="644" cy="694" r="2.4"/>
-      </g>
-
-      <!-- traveller: same figure as the day scene, lantern doing the work -->
-      <g transform="translate(862 620) scale(1.6)">
-        <path d="M13 1 L9 -42" stroke="#0C1017" stroke-width="2.4" stroke-linecap="round"/>
-        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#0C1017"/>
-        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#0C1017"/>
-        <circle cx="0" cy="-31" r="4.4" fill="#0C1017"/>
-        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#0C1017"/>
-        <circle cx="9" cy="-42" r="18" fill="url(#lanternGlow)"/>
-        <circle cx="9" cy="-42" r="3"  fill="#CFF3FF"/>
-      </g>
-    </svg>
+    <img src="assets/hero-night.jpg" alt="" onerror="this.remove()">
   </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
 
   <div class="shell hero__inner">
     <div class="hero__panel">
-    <p class="eyebrow eyebrow--onart">
-      <svg class="ico ico--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
-      Short-form that makes indie games move
-    </p>
+    <p class="eyebrow eyebrow--onart">Short-form that makes indie games move</p>
     <h1 class="hero__title">
-      You didn't get lost making the game.
-      <span class="hero__title-accent">Nobody ever saw it.</span>
+      You made the game.<br>
+      <span class="hero__title-accent">Nobody saw it.</span>
     </h1>
     <div class="hero__title-rule" aria-hidden="true"></div>
     <p class="hero__sub">
@@ -296,35 +85,13 @@
     <div class="hero__cta">
       <a class="btn btn--primary btn--lg" href="#packages">
         Send me your game
-        <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="ico ico--sm" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>
       </a>
       <p class="hero__cta-note">DMs are open, and I actually read them.</p>
     </div>
     </div>
   </div>
 
-  <!-- bunting: rope with alternating pennants, closing the hero -->
-  <div class="hero__pennants" aria-hidden="true">
-    <svg viewBox="0 0 1440 44" preserveAspectRatio="none">
-      <path class="pen-rope" d="M0 6 Q360 18 720 6 T1440 6"/>
-      <g class="pen-a">
-        <path d="M0 7 L60 10 L30 44 Z"/><path d="M120 12 L180 13 L150 44 Z"/>
-        <path d="M240 14 L300 14 L270 44 Z"/><path d="M360 14 L420 13 L390 44 Z"/>
-        <path d="M480 12 L540 11 L510 44 Z"/><path d="M600 9 L660 8 L630 44 Z"/>
-        <path d="M720 7 L780 8 L750 44 Z"/><path d="M840 9 L900 11 L870 44 Z"/>
-        <path d="M960 12 L1020 13 L990 44 Z"/><path d="M1080 14 L1140 14 L1110 44 Z"/>
-        <path d="M1200 13 L1260 12 L1230 44 Z"/><path d="M1320 10 L1380 8 L1350 44 Z"/>
-      </g>
-      <g class="pen-b">
-        <path d="M60 10 L120 12 L90 44 Z"/><path d="M180 13 L240 14 L210 44 Z"/>
-        <path d="M300 14 L360 14 L330 44 Z"/><path d="M420 13 L480 12 L450 44 Z"/>
-        <path d="M540 11 L600 9 L570 44 Z"/><path d="M660 8 L720 7 L690 44 Z"/>
-        <path d="M780 8 L840 9 L810 44 Z"/><path d="M900 11 L960 12 L930 44 Z"/>
-        <path d="M1020 13 L1080 14 L1050 44 Z"/><path d="M1140 14 L1200 13 L1170 44 Z"/>
-        <path d="M1260 12 L1320 10 L1290 44 Z"/><path d="M1380 8 L1440 6 L1410 44 Z"/>
-      </g>
-    </svg>
-  </div>
 </section>
 
 <!-- ============================================================ BIO -->
@@ -342,13 +109,6 @@
             <path d="M30 240 C30 172 62 146 100 146 C138 146 170 172 170 240 Z" class="pf-shape"/>
           </svg>
           <span>portrait.jpg</span>
-        </div>
-        <svg class="portrait__frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M2 2 H98 V98 H2 Z" />
-        </svg>
-        <div class="portrait__badge">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
-          <span>Editing<br>&amp; thumbs</span>
         </div>
       </div>
     </div>
@@ -373,9 +133,7 @@
       </p>
 
       <figure class="pullquote">
-        <svg class="pullquote__mark" viewBox="0 0 40 32" aria-hidden="true">
-          <path d="M0 32V18C0 8 5 2 15 0l2 6c-5 2-7 5-7 9h7v17H0Zm23 0V18C23 8 28 2 38 0l2 6c-5 2-7 5-7 9h7v17H23Z"/>
-        </svg>
+        <svg class="pullquote__mark" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 297" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 297 297"> <g> <path d="m217.412,157.164c-8.192-10.477-20.802-17.199-34.922-17.199-24.63,0-44.668,20.461-44.668,45.611 0,17.755 12.837,38.291 38.154,61.039 17.841,16.03 35.43,27.372 36.17,27.848 1.605,1.029 3.435,1.544 5.266,1.544 1.831,0 3.662-0.515 5.266-1.544 0.741-0.476 18.328-11.817 36.17-27.849 25.315-22.748 38.152-43.284 38.152-61.038 0-25.15-20.037-45.611-44.667-45.611-14.119,0-26.729,6.723-34.921,17.199z"></path> <path d="m133.352,223.009c-8.03-12.849-12.103-25.442-12.103-37.433 0-34.288 27.473-62.185 61.241-62.185 12.693,0 24.795,3.922 34.922,11.088 10.126-7.166 22.227-11.088 34.921-11.088 5.253,0 10.352,0.677 15.22,1.944 4.259-10.244 6.409-20.005 6.409-29.244 0-41.41-32.911-75.099-73.363-75.099-27.17,0-50.936,15.194-63.616,37.721-12.68-22.526-36.448-37.721-63.62-37.721-40.453,0.001-73.363,33.69-73.363,75.1 0,29.981 22.491,65.396 66.85,105.262 32.026,28.784 63.54,49.109 64.866,49.961 1.605,1.03 3.437,1.545 5.267,1.545 1.831,0 3.663-0.515 5.268-1.545 0.403-0.259 3.613-2.331 8.766-5.882-7.21-7.66-13.125-15.163-17.665-22.424z"></path> </g> </svg>
         <blockquote>
           If you're a dev with a game you believe in, or a brand that wants to collab —
           the DMs are open, and I actually read them.
@@ -400,41 +158,22 @@
     <p class="trustbar__label">A few of the 180+</p>
     <ul class="trustbar__logos">
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Hollowfen (placeholder)">
-          <path d="M13 6 L23 17 L13 28 L3 17 Z" fill="currentColor"/>
-          <text x="30" y="23" class="logo-type">HOLLOWFEN</text>
-        </svg>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Hollowfen (placeholder)"><text x="4" y="23" class="logo-type">HOLLOWFEN</text></svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Ashvault (placeholder)">
-          <path d="M4 26 L13 8 L22 26 Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
-          <text x="29" y="23" class="logo-type">ASHVAULT</text>
-        </svg>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Ashvault (placeholder)"><text x="4" y="23" class="logo-type">ASHVAULT</text></svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Tin Compass (placeholder)">
-          <circle cx="14" cy="17" r="10" fill="none" stroke="currentColor" stroke-width="2.6"/>
-          <path d="M14 9 L17 17 L14 25 L11 17 Z" fill="currentColor"/>
-          <text x="31" y="23" class="logo-type">TIN COMPASS</text>
-        </svg>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Tin Compass (placeholder)"><text x="4" y="23" class="logo-type">TIN COMPASS</text></svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Nightmarket (placeholder)">
-          <rect x="6" y="9" width="16" height="16" rx="3" transform="rotate(45 14 17)" fill="none" stroke="currentColor" stroke-width="2.6"/>
-          <text x="32" y="23" class="logo-type">NIGHTMARKET</text>
-        </svg>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Nightmarket (placeholder)"><text x="4" y="23" class="logo-type">NIGHTMARKET</text></svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Saltpetre (placeholder)">
-          <path d="M14 5 L17 14 L26 17 L17 20 L14 29 L11 20 L2 17 L11 14 Z" fill="currentColor"/>
-          <text x="31" y="23" class="logo-type">SALTPETRE</text>
-        </svg>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Saltpetre (placeholder)"><text x="4" y="23" class="logo-type">SALTPETRE</text></svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Wrenlight (placeholder)">
-          <path d="M5 25 L14 7 L23 25 Z M9 19 h10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
-          <text x="30" y="23" class="logo-type">WRENLIGHT</text>
-        </svg>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Wrenlight (placeholder)"><text x="4" y="23" class="logo-type">WRENLIGHT</text></svg>
       </li>
     </ul>
   </div>
@@ -481,12 +220,8 @@
       <!-- EPIC -->
       <article class="tier tier--epic">
         <div class="tier__emblem" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <circle class="em-glow" cx="32" cy="32" r="29"/>
-            <path class="em-main" d="M32 5 L54 32 L32 59 L10 32 Z"/>
-            <path class="em-facet-l" d="M32 5 L10 32 L32 32 Z"/>
-            <path class="em-facet-r" d="M32 32 L54 32 L32 59 Z"/>
-            <path class="em-line" d="M10 32 H54 M32 5 V59"/>
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="em-main" d="M27 4 L12 27 h9 l-3 17 L36 21 h-9 Z"/>
           </svg>
         </div>
         <h3 class="tier__rarity">Epic</h3>
@@ -510,15 +245,11 @@
           Most chosen
         </p>
         <div class="tier__emblem" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <circle class="em-glow" cx="32" cy="32" r="29"/>
-            <!-- one continuous horn: curved body opening into a flared bell -->
-            <path class="em-main" d="M13 50 C13 29 26 15 45 11 L57 4 L57 31 L45 23 C33 26 24 36 24 50 Z"/>
-            <path class="em-facet-l" d="M13 50 C13 29 26 15 45 11 L45 16 C30 20 19 33 19 50 Z"/>
-            <path class="em-facet-r" d="M45 17 L57 17 L57 31 L45 23 Z"/>
-            <!-- mouthpiece rim and binding -->
-            <rect class="em-main" x="10" y="49" width="17" height="9" rx="3"/>
-            <path class="em-line" d="M30 17 L34 25 M11 53 H26"/>
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="em-main" d="M24 6 C20 14 20 20 24 26 C28 20 28 14 24 6 Z"/>
+            <path class="em-main" d="M22 27 C14 22 8 24 4 30 C11 33 17 32 22 28 Z"/>
+            <path class="em-main" d="M26 27 C34 22 40 24 44 30 C37 33 31 32 26 28 Z"/>
+            <path class="em-main" d="M24 29 L27 42 L24 39 L21 42 Z"/>
           </svg>
         </div>
         <h3 class="tier__rarity">Legendary</h3>
@@ -539,17 +270,9 @@
       <!-- MYTHICAL -->
       <article class="tier tier--mythical">
         <div class="tier__emblem" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <circle class="em-glow" cx="32" cy="33" r="30"/>
-            <!-- flanking shards, cut lower so they read as a cluster -->
-            <path class="em-main"    d="M8 41 L17 31 L17 51 L8 56 Z"/>
-            <path class="em-facet-r" d="M17 31 L17 51 L8 56 L8 41 Z"/>
-            <path class="em-main"    d="M56 43 L47 33 L47 51 L56 56 Z"/>
-            <path class="em-facet-r" d="M47 33 L47 51 L56 56 L56 43 Z"/>
-            <!-- central crystal: table-cut top, not a point -->
-            <path class="em-main"    d="M25 5 L39 5 L47 22 L47 46 L32 59 L17 46 L17 22 Z"/>
-            <path class="em-facet-l" d="M25 5 L17 22 L17 46 L32 59 Z"/>
-            <path class="em-line"    d="M17 22 L32 30 L47 22 M32 30 V59 M25 5 L32 30 L39 5"/>
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path class="em-main" d="M24 3 C29 12 35 15 35 24 C35 32 30 38 24 45 C18 38 13 32 13 24 C13 15 19 12 24 3 Z"/>
+            <path class="em-core" d="M24 20 C26 25 29 27 29 31 C29 35 27 38 24 41 C21 38 19 35 19 31 C19 27 22 25 24 20 Z"/>
           </svg>
         </div>
         <h3 class="tier__rarity">Mythical</h3>
@@ -683,57 +406,45 @@
     <div class="quest-grid">
 
       <a class="quest" href="#">
-        <span class="quest__sigil" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><path d="M20 3 L34 20 L20 37 L6 20 Z"/><path d="M20 11 L27 20 L20 29 L13 20 Z" class="sigil-inner"/></svg>
-        </span>
+        <span class="quest__sigil" aria-hidden="true">01</span>
         <h3 class="quest__name">Hollowfen</h3>
         <p class="quest__result">One video, 4.2M views. Wishlists 4k → 61k in eight weeks.</p>
-        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="quest" href="#">
-        <span class="quest__sigil" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M20 6 L25 20 L20 34 L15 20 Z" class="sigil-inner"/></svg>
-        </span>
+        <span class="quest__sigil" aria-hidden="true">02</span>
         <h3 class="quest__name">Ashvault</h3>
         <p class="quest__result">Thumbnail rebuilt and retested. Click-through 2.1% → 9.4%.</p>
-        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="quest" href="#">
-        <span class="quest__sigil" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><path d="M20 4 L36 13 V27 L20 36 L4 27 V13 Z"/><path d="M20 13 L28 17.5 V24 L20 28 L12 24 V17.5 Z" class="sigil-inner"/></svg>
-        </span>
+        <span class="quest__sigil" aria-hidden="true">03</span>
         <h3 class="quest__name">Saltpetre Collective</h3>
         <p class="quest__result">Told them to cut the ad spend and ship a demo instead. Funnel tripled.</p>
-        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="quest" href="#">
-        <span class="quest__sigil" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><path d="M6 30 L20 5 L34 30 Z"/><path d="M14 30 L20 18 L26 30 Z" class="sigil-inner"/></svg>
-        </span>
+        <span class="quest__sigil" aria-hidden="true">04</span>
         <h3 class="quest__name">Tin Compass</h3>
         <p class="quest__result">Second title outsold the first 7× on 40% of the budget.</p>
-        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="quest" href="#">
-        <span class="quest__sigil" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><path d="M20 4 L24 16 L36 20 L24 24 L20 36 L16 24 L4 20 L16 16 Z"/></svg>
-        </span>
+        <span class="quest__sigil" aria-hidden="true">05</span>
         <h3 class="quest__name">Bright Hollow</h3>
         <p class="quest__result">Reveal moved out of a crowded week. 3× the reach.</p>
-        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="quest" href="#">
-        <span class="quest__sigil" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><rect x="7" y="7" width="26" height="26" rx="4" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="5" class="sigil-inner"/></svg>
-        </span>
+        <span class="quest__sigil" aria-hidden="true">06</span>
         <h3 class="quest__name">Nightmarket</h3>
         <p class="quest__result">Four platforms cut to one. Cost per wishlist fell 68%.</p>
-        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
     </div>
@@ -748,57 +459,39 @@
         <p class="eyebrow"><span class="eyebrow__rule"></span> Notes</p>
         <h2 class="h2">Things I keep having to explain</h2>
       </div>
-      <a class="link-arrow" href="blog/">All notes <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="link-arrow" href="blog/">All notes <svg class="ico ico--sm" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></a>
     </header>
 
     <div class="posts">
 
       <a class="post" href="blog/friend-slop.html">
         <div class="post__art" aria-hidden="true">
-          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
-            <rect width="400" height="220" class="pa-bg"/>
-            <path d="M0 176 L70 120 L124 158 L192 96 L252 148 L322 104 L400 160 L400 220 L0 220 Z" class="pa-far"/>
-            <path d="M0 204 L92 160 L172 200 L262 156 L342 198 L400 172 L400 220 L0 220 Z" class="pa-near"/>
-            <rect x="150" y="44" width="100" height="62" class="pa-orb"/>
-            <path d="M150 44 h100 M150 62 h100 M200 44 v62" class="pa-mark"/>
-          </svg>
+          <img src="assets/post-friend-slop.jpg" alt="" loading="lazy" onerror="this.remove()">
         </div>
         <p class="post__meta"><span class="post__tag">Game Design</span> <span>15 Jan 2026</span> <span>· 12 min read</span></p>
         <h3 class="post__title">The $10 Board Game: Why &lsquo;Friend Slop&rsquo; Is The Highest ROI Niche In Gaming</h3>
         <p class="post__excerpt">Stop building &lsquo;Live Services&rsquo; and start building digital board games. Why $10 co-op is the highest ROI niche in gaming, and how the Closet Framework makes your players market for you.</p>
-        <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="post__link">Read it <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="post" href="blog/streamers.html">
         <div class="post__art" aria-hidden="true">
-          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
-            <rect width="400" height="220" class="pa-bg"/>
-            <path d="M0 190 C80 154 140 204 210 176 C280 148 340 190 400 162 L400 220 L0 220 Z" class="pa-far"/>
-            <path d="M0 208 C90 186 160 216 240 196 C320 176 360 208 400 192 L400 220 L0 220 Z" class="pa-near"/>
-            <path d="M200 40 L232 92 L168 92 Z" class="pa-orb"/>
-            <path d="M140 60 a72 72 0 0 1 120 0 M120 82 a100 100 0 0 1 160 0" class="pa-mark"/>
-          </svg>
+          <img src="assets/post-streamers.jpg" alt="" loading="lazy" onerror="this.remove()">
         </div>
         <p class="post__meta"><span class="post__tag">Game Marketing</span> <span>15 Jan 2026</span> <span>· 5 min read</span></p>
         <h3 class="post__title">How To Get 100+ Streamers To Play Your Game (For $0)</h3>
         <p class="post__excerpt">All you need is 1% of 1 million views to wishlist or buy your game for you to make $10,000. Here is the three-tier system that gets you there without a budget.</p>
-        <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="post__link">Read it <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
 
       <a class="post" href="blog/discord.html">
         <div class="post__art" aria-hidden="true">
-          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
-            <rect width="400" height="220" class="pa-bg"/>
-            <path d="M0 182 L64 132 L118 166 L186 108 L250 156 L318 116 L400 168 L400 220 L0 220 Z" class="pa-far"/>
-            <path d="M0 206 L400 184 L400 220 L0 220 Z" class="pa-near"/>
-            <path d="M200 46 C224 82 214 104 200 128 C186 104 176 82 200 46 Z" class="pa-orb"/>
-            <path d="M148 138 h104 M136 152 h128" class="pa-mark"/>
-          </svg>
+          <img src="assets/post-discord.jpg" alt="" loading="lazy" onerror="this.remove()">
         </div>
         <p class="post__meta"><span class="post__tag">Game Marketing</span> <span>14 Jan 2026</span> <span>· 6 min read</span></p>
         <h3 class="post__title">Why 1,000 Discord Members Are Worth More Than 100k Twitter Impressions</h3>
         <p class="post__excerpt">Stop renting attention on social media. Why Discord is the highest leverage asset in gaming, and how the Campfire Framework turns your players into your sales team.</p>
-        <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="post__link">Read it <svg class="ico ico--xs" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></span>
       </a>
     </div>
   </div>
@@ -825,54 +518,7 @@
         <p class="signup__msg" id="signupMsg" role="status"></p>
       </form>
     </div>
-
-    <div class="newsletter__art" aria-hidden="true">
-      <svg viewBox="0 0 420 360">
-        <defs>
-          <radialGradient id="beaconGlow" cx="50%" cy="42%">
-            <stop offset="0%"   stop-color="#8FE6FF" stop-opacity=".8"/>
-            <stop offset="42%"  stop-color="#38D6FF" stop-opacity=".4"/>
-            <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <circle cx="210" cy="150" r="150" fill="url(#beaconGlow)"/>
-
-        <!-- rings -->
-        <circle cx="210" cy="150" r="104" class="nl-ring"/>
-        <circle cx="210" cy="150" r="132" class="nl-ring nl-ring--faint"/>
-
-        <!-- distant peaks -->
-        <path d="M0 322 L58 262 L96 300 L146 250 L186 292 L186 322 Z" class="nl-peak"/>
-        <path d="M234 322 L274 288 L312 314 L358 262 L420 322 Z" class="nl-peak"/>
-
-        <!-- cairn -->
-        <g class="nl-stone">
-          <ellipse cx="210" cy="322" rx="86" ry="16"/>
-          <path d="M158 320 h104 l-12 -34 h-80 Z"/>
-          <path d="M170 286 h80 l-11 -30 h-58 Z"/>
-          <path d="M186 256 h48 l-9 -26 h-30 Z"/>
-        </g>
-
-        <!-- brazier -->
-        <path d="M180 230 h60 l-8 -26 h-44 Z" class="nl-brazier"/>
-        <path d="M172 204 h76" class="nl-brazier-lip"/>
-
-        <!-- flames -->
-        <path class="flame" d="M210 202 C238 164 226 132 210 92 C194 132 182 164 210 202 Z" fill="#1F51FF"/>
-        <path class="flame flame--inner" d="M210 200 C228 172 220 150 210 118 C200 150 192 172 210 200 Z" fill="#38D6FF"/>
-        <path class="flame flame--core" d="M210 198 C219 178 215 164 210 144 C205 164 201 178 210 198 Z" fill="#CFF3FF"/>
-
-        <!-- sparks -->
-        <g class="nl-spark" fill="#38D6FF">
-          <circle cx="252" cy="104" r="3"/><circle cx="168" cy="86" r="2.2"/>
-          <circle cx="272" cy="152" r="2"/><circle cx="146" cy="140" r="2.6"/>
-          <circle cx="238" cy="58" r="1.8"/><circle cx="184" cy="46" r="2.2"/>
-        </g>
-
-      </svg>
-    </div>
-  </div>
+</div>
 </section>
 
 </main>
@@ -884,10 +530,11 @@
 
       <div class="footer__brand">
         <a class="brand" href="#top">
-          <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-            <path class="mark-shield" d="M4 4 H36 V21 C36 30 28 35 20 38 C12 35 4 30 4 21 Z"/>
-            <path class="mark-chief" d="M4 4 H36 V13 H4 Z"/>
-            <path class="mark-charge" d="M20 15 L26 22 L20 31 L14 22 Z"/>
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect class="mark-a" x="2" y="2" width="13" height="13" rx="2"/>
+            <rect class="mark-b" x="17" y="2" width="13" height="13" rx="2"/>
+            <rect class="mark-b" x="2" y="17" width="13" height="13" rx="2"/>
+            <rect class="mark-a" x="17" y="17" width="13" height="13" rx="2"/>
           </svg>
           <span class="brand__text">GameLaunch<span class="brand__dot">.</span></span>
         </a>

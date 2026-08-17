@@ -21,59 +21,60 @@ assets/                 the one photograph on the site
 
 ## Design system
 
-**White and neon blue, over black.** Light mode is a pure white page with
-`#F8F8F8` for banded sections and panels. Dark mode is `#1D232E` for the
-page and `#181C28` for cards and important panels. **The nav bar is pure
-black in both themes** — the one fixed point in the design. Neon blue
-(`#1F51FF` light, `#4D7CFF` dark) carries every highlight, with electric
-cyan (`#00C2FF` / `#38D6FF`) as the secondary. Rarity tiers run sky blue →
-neon blue → brass.
+Rebuilt against the reference build the client supplied (indiegamejoe.com),
+with its palette read from the page source rather than guessed.
 
-**Medieval structure, not medieval decoration.** The ornament is
-load-bearing: a shield wordmark, a wax-seal badge on the portrait, pennant
-bunting closing the hero, a pennant notch cut into the bottom edge of every
-tier card, doubled rules under headings, cut corners on buttons and the hero
-panel, hard offset shadows instead of soft ones, and illuminated drop caps
-opening the bio and every article.
+**Colour**
 
-**The tier section follows the supplied reference layout**: centred eyebrow,
-a bold uppercase title flanked by rules ending in stacked diamonds, three
-centred cards with a rarity-coloured cap bar, a notched MOST CHOSEN tab on
-the raised middle card, tick lists, and a centred MORE INFO button.
-
-**No transparency anywhere.** Every surface, border and overlay is a solid
-colour. There is no `backdrop-filter`, no `rgba()` UI fill, no faded panel,
-no opacity on a component. Two consequences worth knowing:
-
-- The hero copy sits on a **solid panel** over the artwork rather than on a
-  semi-transparent scrim.
-- The two terrains **swap outright** rather than cross-fading, because a
-  cross-fade is two half-transparent images stacked.
-
-The illustrations still use gradient fills for shading inside the SVG —
-that's how the sun, moon and firelight are drawn, and it isn't a
-transparency effect in the UI sense.
-
-**Two terrains, not one palette.** Light and dark aren't a colour swap. The
-hero holds two separately drawn scenes — a pale-blue day valley with a white
-sun, snow caps, a chalk path and a hiker; and a night version in the
-`#1D232E` family with a crescent moon, blue aurora, a constellation, a lake,
-and an arcane blue campfire.
-
-**Themes resolve three ways**, each handled explicitly:
-
-| State | How it's set | Selector |
+| Role | Light | Dark |
 |---|---|---|
-| System light | default | bare `:root` |
-| System dark | OS preference, no choice made | `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) }` |
-| Explicit | the toggle, persisted to `localStorage` | `:root[data-theme="dark"]` / `["light"]` |
+| Page | `#FFFFFF` | `#1C232E` |
+| Sections, cards | `#F4F4F4` / `#F8F8F8` | `#171C28` |
+| Nav | `#000000` | `#000000` |
+| Ink | `#212121` | `#FFFFFF` |
+| Muted | `#4E4B66` | `#A3A3A3` |
+| Primary accent | `#E9368A` | `#E9368A` |
+| Second accent | `#1863DC` | `#4D8CF0` |
 
-A blocking inline script in `<head>` applies the stored choice before first
-paint, so the wrong terrain never flashes.
+Pink is the action colour — it carries the CTAs, the ornament and the
+highlights, exactly as in the reference. Blue is structural. Rarity tiers
+run blue → pink → tan.
 
-**No animation.** No keyframes, no scroll reveals — nothing moves on its
-own. The only transitions are hover, focus and the press states, which
-respond to a user action.
+**Type** is a system sans throughout. Headings are extrabold, uppercase and
+lightly tracked; body copy stays sentence case. No display serif, no
+webfont, nothing fetched at runtime.
+
+**Surfaces** are flat: 1px borders, a 4px radius, and colour-only hover
+transitions at 300ms. No offset shadows, no cut corners, no double rules.
+
+**Illustration was removed.** The hand-drawn vector landscapes, pennant
+bunting, wax seal, shield mark and drawn newsletter beacon are gone — they
+were the weakest part of the build. What replaces them follows the
+reference, which is image-led (72 `<img>` to 14 inline SVG): real image
+slots with graceful fallbacks. The remaining inline SVG is functional only —
+star ratings, chevrons, the brand mark, the toggle's sun/moon, and the
+testimonial glyph. The sun, moon and chevrons are taken verbatim from the
+reference page (they are stock open-source icon shapes — the moon is
+Feather's, MIT).
+
+**Two ornaments survive**, because the reference itself uses them: the
+section title flanked by rules ending in stacked diamonds, and the pennant
+notch cut into the bottom edge of each tier card.
+
+**The tier section follows the supplied screenshot**: centred eyebrow, bold
+uppercase title, three centred cards with a rarity-coloured cap bar, a
+notched MOST CHOSEN tab on the raised middle card, tick lists, and a centred
+MORE INFO button.
+
+**Two terrains.** The hero swaps a day image for a night one with the theme,
+the same pattern the reference uses for `2k_DAY.webp` / `2k_NIGHT.webp`.
+Until real artwork is dropped into `assets/`, a CSS gradient stands in.
+Themes resolve three ways — system light, system dark, and an explicit
+choice persisted to `localStorage` — each with its own selector, applied
+before first paint by a blocking inline script.
+
+**No animation.** No keyframes, no scroll reveals. The only transitions are
+hover, focus and press states.
 
 ## Accessibility & responsive
 

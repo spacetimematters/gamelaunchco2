@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wayfinder — Launch strategy for indie game studios</title>
+<meta name="description" content="Most studios don't fail at making games. They fail at launching them. Wayfinder guides indie teams from first reveal to day-one sales.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="styles.css">
+<script>
+  /* Runs before first paint: the stored terrain never flashes the wrong one,
+     and `.js` gates the scroll-reveal start state so no-JS still shows content. */
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('wayfinder-theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128506;</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================ NAV -->
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a class="brand" href="#top" aria-label="Wayfinder home">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2 L34 20 L20 38 L6 20 Z" class="mark-outer"/>
+        <path d="M20 9.5 L28.5 20 L20 30.5 L11.5 20 Z" class="mark-inner"/>
+        <path d="M20 14 L23 20 L20 26 L17 20 Z" class="mark-core"/>
+      </svg>
+      <span class="brand__text">Wayfinder<span class="brand__dot">.</span></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#packages">Packages</a>
+      <a href="#proof">Proof</a>
+      <a href="#quests">Case studies</a>
+      <a href="#dispatches">Dispatches</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode" aria-pressed="false">
+        <span class="theme-toggle__track" aria-hidden="true">
+          <svg class="theme-toggle__icon theme-toggle__icon--day" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4.6"/>
+            <g class="rays"><path d="M12 1.4v3M12 19.6v3M1.4 12h3M19.6 12h3M4.5 4.5l2.1 2.1M17.4 17.4l2.1 2.1M19.5 4.5l-2.1 2.1M6.6 17.4l-2.1 2.1"/></g>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--night" viewBox="0 0 24 24">
+            <path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.7 8.7 0 1 0 11.1 11.1Z"/>
+            <circle cx="17.5" cy="5.5" r="1.1" class="twinkle"/>
+            <circle cx="20.6" cy="9.2" r="0.7" class="twinkle"/>
+          </svg>
+          <span class="theme-toggle__thumb"></span>
+        </span>
+      </button>
+      <a class="btn btn--sm btn--ghost" href="#packages"><span class="btn__long">Start the quest</span><span class="btn__short" aria-hidden="true">Start</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ HERO -->
+<section class="hero" id="top">
+
+  <!-- ---------- DAY ART ---------- -->
+  <div class="hero__art hero__art--day" aria-hidden="true">
+    <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="daySky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#FFDDB8"/>
+          <stop offset="36%"  stop-color="#FFC2D6"/>
+          <stop offset="70%"  stop-color="#CEC2FA"/>
+          <stop offset="100%" stop-color="#B0A3F0"/>
+        </linearGradient>
+        <radialGradient id="dayGlow" cx="50%" cy="50%">
+          <stop offset="0%"   stop-color="#FFF3C4" stop-opacity="1"/>
+          <stop offset="55%"  stop-color="#FFD98E" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#FFC46B" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="dayFar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#A392EC"/><stop offset="100%" stop-color="#8878DE"/>
+        </linearGradient>
+        <linearGradient id="dayMid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7361CE"/><stop offset="100%" stop-color="#5745AC"/>
+        </linearGradient>
+        <linearGradient id="dayNear" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#443680"/><stop offset="100%" stop-color="#2C2159"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1440" height="720" fill="url(#daySky)"/>
+
+      <!-- sun -->
+      <circle cx="962" cy="188" r="240" fill="url(#dayGlow)"/>
+      <circle cx="962" cy="188" r="72" fill="#FFF6D6"/>
+      <circle cx="962" cy="188" r="72" fill="none" stroke="#FFB86B" stroke-opacity=".5" stroke-width="2"/>
+
+      <!-- drifting clouds -->
+      <g fill="#FFFFFF" opacity=".42">
+        <ellipse cx="300" cy="150" rx="120" ry="26"/>
+        <ellipse cx="360" cy="132" rx="78"  ry="20"/>
+        <ellipse cx="760" cy="238" rx="96"  ry="20"/>
+        <ellipse cx="1230" cy="120" rx="86" ry="18"/>
+      </g>
+
+      <!-- birds -->
+      <g fill="none" stroke="#6F5DC4" stroke-width="3" stroke-linecap="round" opacity=".65">
+        <path d="M470 210c8-9 16-9 24 0M494 210c8-9 16-9 24 0"/>
+        <path d="M566 168c6-7 12-7 18 0M584 168c6-7 12-7 18 0"/>
+      </g>
+
+      <!-- far range -->
+      <path fill="url(#dayFar)" d="M0 470 L150 336 L246 404 L376 274 L470 372 L560 300 L664 420 L780 330 L900 436 L1010 366 L1130 458 L1260 380 L1440 486 L1440 720 L0 720 Z"/>
+      <path fill="#FFFFFF" opacity=".8" d="M376 274 L420 320 L400 330 L376 316 L352 332 L332 322 Z"/>
+      <path fill="#FFFFFF" opacity=".7" d="M150 336 L186 374 L168 382 L150 370 L128 384 L112 374 Z"/>
+
+      <!-- mid range -->
+      <path fill="url(#dayMid)" d="M0 560 L120 470 L230 540 L340 452 L448 546 L560 468 L690 566 L810 496 L940 574 L1070 500 L1200 578 L1330 512 L1440 570 L1440 720 L0 720 Z"/>
+
+      <!-- near hills -->
+      <path fill="url(#dayNear)" d="M0 648 C160 596 300 660 430 630 C560 600 640 654 760 640 C880 626 980 584 1110 616 C1240 648 1340 618 1440 640 L1440 720 L0 720 Z"/>
+
+      <!-- winding path -->
+      <path d="M700 720 C700 660 620 650 636 606 C652 562 742 566 754 528 C766 490 706 478 716 452"
+            fill="none" stroke="#F6EEFF" stroke-width="22" stroke-linecap="round" opacity=".92"/>
+      <path d="M700 720 C700 660 620 650 636 606 C652 562 742 566 754 528 C766 490 706 478 716 452"
+            fill="none" stroke="#B79BFF" stroke-width="22" stroke-linecap="round"
+            stroke-dasharray="2 26" opacity=".6"/>
+
+      <!-- pines -->
+      <g fill="#2E2460">
+        <path d="M300 660 L318 700 L282 700 Z M300 636 L314 668 L286 668 Z"/><rect x="296" y="698" width="8" height="16"/>
+        <path d="M360 676 L376 710 L344 710 Z M360 656 L373 682 L347 682 Z"/><rect x="356" y="708" width="8" height="14"/>
+        <path d="M1080 646 L1100 690 L1060 690 Z M1080 620 L1096 656 L1064 656 Z"/><rect x="1076" y="688" width="8" height="18"/>
+        <path d="M1140 668 L1156 704 L1124 704 Z"/><rect x="1136" y="702" width="8" height="14"/>
+      </g>
+
+      <!-- traveller: cloak, pack, wide-brim hat, lantern on the staff -->
+      <g transform="translate(686 616) scale(1.6)">
+        <ellipse cx="0" cy="1" rx="15" ry="3" fill="#1F1747" opacity=".28"/>
+        <path d="M13 1 L9 -42" stroke="#241B53" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#241B53"/>
+        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#241B53"/>
+        <circle cx="0" cy="-31" r="4.4" fill="#241B53"/>
+        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#241B53"/>
+        <circle cx="9" cy="-42" r="3" fill="#FFB05C"/>
+        <circle cx="9" cy="-42" r="6.5" fill="#FFB05C" opacity=".25"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ---------- NIGHT ART ---------- -->
+  <div class="hero__art hero__art--night" aria-hidden="true">
+    <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#070A1F"/>
+          <stop offset="42%"  stop-color="#141034"/>
+          <stop offset="76%"  stop-color="#2A1A50"/>
+          <stop offset="100%" stop-color="#3B1F5C"/>
+        </linearGradient>
+        <radialGradient id="moonGlow" cx="50%" cy="50%">
+          <stop offset="0%"   stop-color="#CFE2FF" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#8FA8FF" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#6B4FE0" stop-opacity="0"/>
+          <stop offset="30%"  stop-color="#8C6BFF" stop-opacity=".42"/>
+          <stop offset="58%"  stop-color="#7BC7E8" stop-opacity=".32"/>
+          <stop offset="82%"  stop-color="#5CE0D8" stop-opacity=".18"/>
+          <stop offset="100%" stop-color="#5CE0D8" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="nightFar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2A2258"/><stop offset="100%" stop-color="#1A1440"/>
+        </linearGradient>
+        <linearGradient id="nightMid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#191338"/><stop offset="100%" stop-color="#100C28"/>
+        </linearGradient>
+        <radialGradient id="lanternGlow" cx="50%" cy="50%">
+          <stop offset="0%"   stop-color="#FFD79A" stop-opacity=".8"/>
+          <stop offset="45%"  stop-color="#FFC46B" stop-opacity=".28"/>
+          <stop offset="100%" stop-color="#FFC46B" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="fireGlow" cx="50%" cy="50%">
+          <stop offset="0%"   stop-color="#FFB05C" stop-opacity=".85"/>
+          <stop offset="45%"  stop-color="#FF7A3C" stop-opacity=".35"/>
+          <stop offset="100%" stop-color="#FF5FA8" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <rect width="1440" height="720" fill="url(#nightSky)"/>
+
+      <!-- aurora ribbons -->
+      <path d="M-40 210 C220 120 420 268 700 190 C980 112 1180 250 1480 168 L1480 262 C1180 344 980 206 700 284 C420 362 220 214 -40 304 Z" fill="url(#aurora)" opacity=".5"/>
+      <path d="M-40 300 C260 236 460 348 760 288 C1060 228 1240 330 1480 276 L1480 322 C1240 376 1060 274 760 334 C460 394 260 282 -40 346 Z" fill="url(#aurora)" opacity=".28"/>
+
+      <!-- stars -->
+      <g fill="#EAF0FF" class="stars">
+        <circle cx="80"  cy="72"  r="1.8"/><circle cx="164" cy="140" r="1.2"/><circle cx="248" cy="58"  r="2.1"/>
+        <circle cx="322" cy="188" r="1.3"/><circle cx="404" cy="96"  r="1.7"/><circle cx="470" cy="42"  r="1.1"/>
+        <circle cx="548" cy="152" r="2"/>  <circle cx="628" cy="84"  r="1.4"/><circle cx="702" cy="46"  r="1.8"/>
+        <circle cx="784" cy="128" r="1.2"/><circle cx="858" cy="70"  r="2.2"/><circle cx="936" cy="176" r="1.3"/>
+        <circle cx="1012" cy="60" r="1.6"/><circle cx="1096" cy="140" r="1.1"/><circle cx="1268" cy="196" r="2"/>
+        <circle cx="1252" cy="40" r="1.4"/><circle cx="1330" cy="164" r="1.8"/><circle cx="1400" cy="104" r="1.2"/>
+        <circle cx="120"  cy="236" r="1.3"/><circle cx="360" cy="268" r="1.6"/><circle cx="600" cy="230" r="1.1"/>
+        <circle cx="900"  cy="252" r="1.5"/><circle cx="1150" cy="228" r="1.2"/><circle cx="1380" cy="262" r="1.7"/>
+        <circle cx="200"  cy="340" r="1.1"/><circle cx="520" cy="356" r="1.3"/><circle cx="1040" cy="330" r="1.2"/>
+      </g>
+
+      <!-- constellation: the wayfinder -->
+      <g stroke="#8C6BFF" stroke-width="1.2" opacity=".75" fill="none">
+        <path d="M248 58 L322 188 L404 96 L470 42"/>
+        <path d="M322 188 L164 140"/>
+      </g>
+      <g fill="#C9B8FF">
+        <circle cx="248" cy="58" r="3"/><circle cx="322" cy="188" r="3"/>
+        <circle cx="404" cy="96" r="3"/><circle cx="470" cy="42" r="2.4"/><circle cx="164" cy="140" r="2.4"/>
+      </g>
+
+      <!-- moon: a true crescent, kept clear of the headline column -->
+      <circle cx="972" cy="140" r="170" fill="url(#moonGlow)"/>
+      <path d="M990 86 A54 54 0 1 0 990 194 A70 70 0 0 1 990 86 Z" fill="#EDF2FF"/>
+      <g fill="#C2CEEA" opacity=".55">
+        <circle cx="964" cy="118" r="5.5"/><circle cx="958" cy="158" r="3.4"/><circle cx="975" cy="182" r="2.6"/>
+      </g>
+
+      <!-- far range with moonlit caps -->
+      <path fill="url(#nightFar)" d="M0 498 L128 392 L232 462 L370 320 L468 424 L582 348 L690 456 L820 372 L946 470 L1076 396 L1206 486 L1330 412 L1440 500 L1440 720 L0 720 Z"/>
+      <g fill="#A9B8F5" opacity=".55">
+        <path d="M370 320 L410 362 L392 372 L370 358 L348 374 L330 362 Z"/>
+        <path d="M820 372 L852 406 L836 414 L820 402 L800 416 L786 406 Z"/>
+      </g>
+
+      <!-- mid range -->
+      <path fill="url(#nightMid)" d="M0 588 L140 500 L262 566 L390 486 L510 576 L640 504 L772 588 L900 522 L1032 600 L1160 530 L1290 604 L1440 546 L1440 720 L0 720 Z"/>
+
+      <!-- lake reflection band -->
+      <path fill="#221A52" d="M0 640 L1440 616 L1440 720 L0 720 Z"/>
+      <path fill="#2C2266" opacity=".5" d="M0 640 L1440 616 L1440 660 L0 686 Z"/>
+      <g stroke="#7A66D0" stroke-width="2" stroke-linecap="round" opacity=".85">
+        <path d="M120 668 h90"/><path d="M250 690 h140"/><path d="M470 662 h110"/>
+        <path d="M980 676 h130"/><path d="M1180 700 h96"/><path d="M620 704 h120"/>
+      </g>
+
+      <!-- campfire + tent -->
+      <circle cx="960" cy="614" r="120" fill="url(#fireGlow)"/>
+      <g transform="translate(1010 616)">
+        <path d="M0 0 L-46 0 L-23 -44 Z" fill="#241B4E"/>
+        <path d="M-23 -44 L-23 0" stroke="#7C5CFF" stroke-width="2.5" opacity=".8"/>
+        <path d="M-30 0 L-23 -22 L-16 0 Z" fill="#0E0A26"/>
+      </g>
+      <g transform="translate(960 616)">
+        <path d="M-22 -1 L18 -7" stroke="#4A3520" stroke-width="7" stroke-linecap="round"/>
+        <path d="M-18 -7 L22 -2" stroke="#5C4228" stroke-width="7" stroke-linecap="round"/>
+        <path class="flame" d="M0 -6 C10 -18 6 -26 0 -40 C-6 -26 -10 -18 0 -6 Z" fill="#FFB05C"/>
+        <path class="flame flame--inner" d="M0 -8 C5 -16 3 -21 0 -30 C-3 -21 -5 -16 0 -8 Z" fill="#FFE9B0"/>
+      </g>
+
+      <!-- lantern path -->
+      <g fill="#FFC46B">
+        <circle cx="700" cy="672" r="3.4"/><circle cx="756" cy="654" r="2.6"/>
+        <circle cx="812" cy="640" r="3"/>  <circle cx="644" cy="694" r="2.4"/>
+      </g>
+
+      <!-- traveller: same figure as the day scene, lantern doing the work -->
+      <g transform="translate(862 620) scale(1.6)">
+        <path d="M13 1 L9 -42" stroke="#08061A" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#08061A"/>
+        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#08061A"/>
+        <circle cx="0" cy="-31" r="4.4" fill="#08061A"/>
+        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#08061A"/>
+        <circle cx="9" cy="-42" r="18" fill="url(#lanternGlow)"/>
+        <circle cx="9" cy="-42" r="3"  fill="#FFE9B0"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero__scrim"></div>
+
+  <div class="shell hero__inner">
+    <p class="eyebrow eyebrow--onart">
+      <svg class="ico ico--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
+      Launch strategy for indie game studios
+    </p>
+    <h1 class="hero__title">
+      You didn't get lost<br>making the game.<br>
+      <span class="hero__title-accent">You got lost after.</span>
+    </h1>
+    <p class="hero__sub">
+      Three years in the wilderness building something remarkable — then a launch window that
+      swallows it whole. I've walked 60+ studios out of that fog and onto a path that ends in
+      wishlists, coverage, and a day one worth showing your investors.
+    </p>
+    <div class="hero__cta">
+      <a class="btn btn--primary btn--lg" href="#packages">
+        Find your path
+        <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="hero__cta-note">Free 30-minute map reading. No deck, no pitch.</p>
+    </div>
+  </div>
+
+  <div class="hero__wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 110" preserveAspectRatio="none">
+      <path d="M0 62 C180 12 320 96 520 74 C720 52 840 6 1040 34 C1200 56 1320 96 1440 66 L1440 110 L0 110 Z"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============================================================ BIO -->
+<section class="bio section" id="guide">
+  <div class="shell bio__grid">
+
+    <div class="bio__portrait reveal">
+      <div class="portrait">
+        <!-- Replace portrait.jpg with the real photo; this is the single photographic element on the page -->
+        <img src="assets/portrait.jpg" alt="Rowan Vale, launch strategist" width="520" height="620" loading="lazy" onerror="this.closest('.portrait').classList.add('portrait--placeholder')">
+        <div class="portrait__fallback" aria-hidden="true">
+          <svg viewBox="0 0 200 240">
+            <rect width="200" height="240" rx="8" class="pf-bg"/>
+            <circle cx="100" cy="92" r="38" class="pf-shape"/>
+            <path d="M30 240 C30 172 62 146 100 146 C138 146 170 172 170 240 Z" class="pf-shape"/>
+          </svg>
+          <span>portrait.jpg</span>
+        </div>
+        <svg class="portrait__frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M2 2 H98 V98 H2 Z" />
+        </svg>
+        <div class="portrait__badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
+          <span>Guide<br>since '14</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio__body reveal">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Your guide</p>
+      <h2 class="h2">I'm Rowan. I've shipped 60+ games and lit the flares on a few disasters.</h2>
+      <p class="lede">
+        Eleven years running launch and publishing for studios between four people and four hundred.
+        Two BAFTA-nominated titles, one console launch that went sideways in public, and a very long
+        list of things I will never let you do again.
+      </p>
+      <p>
+        I'm not an agency. There's no account manager, no junior on your Slack, no deck full of
+        stock arrows. You get me, a map of the terrain ahead, and a plan you can actually execute
+        with the team you already have.
+      </p>
+
+      <figure class="pullquote">
+        <svg class="pullquote__mark" viewBox="0 0 40 32" aria-hidden="true">
+          <path d="M0 32V18C0 8 5 2 15 0l2 6c-5 2-7 5-7 9h7v17H0Zm23 0V18C23 8 28 2 38 0l2 6c-5 2-7 5-7 9h7v17H23Z"/>
+        </svg>
+        <blockquote>
+          A launch isn't a day. It's an eighteen-month walk, and almost everyone
+          starts it about a year too late.
+        </blockquote>
+      </figure>
+
+      <ul class="bio__stats">
+        <li><strong>60+</strong><span>studios guided</span></li>
+        <li><strong>$140M</strong><span>launch revenue steered</span></li>
+        <li><strong>11 yrs</strong><span>on the trail</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TRUST BAR -->
+<section class="trustbar" aria-label="Featured in">
+  <div class="shell">
+    <p class="trustbar__label">Dispatches from the road, published by</p>
+    <ul class="trustbar__logos">
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Polygon Weekly">
+          <circle cx="15" cy="17" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M15 8 L23 17 L15 26 L7 17 Z" fill="currentColor"/>
+          <text x="34" y="23" class="logo-type">POLYGON</text>
+        </svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="The Verge Play">
+          <path d="M4 8 h22 l-11 20 Z" fill="currentColor"/>
+          <text x="32" y="23" class="logo-type">VERGE·PLAY</text>
+        </svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="GameDev Quarterly">
+          <rect x="4" y="9" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M9 17h8M13 13v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <text x="30" y="23" class="logo-type">GAMEDEV Q</text>
+        </svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Indie Beacon">
+          <path d="M13 6 L20 26 H6 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+          <circle cx="13" cy="14" r="2.6" fill="currentColor"/>
+          <text x="28" y="23" class="logo-type">BEACON</text>
+        </svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Rock Paper Ledger">
+          <path d="M5 17 a8 8 0 0 1 16 0 a8 8 0 0 1 -16 0" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M13 9 v16" stroke="currentColor" stroke-width="2.4"/>
+          <text x="28" y="23" class="logo-type">RP·LEDGER</text>
+        </svg>
+      </li>
+      <li>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Sixteen Bits Podcast">
+          <rect x="5" y="10" width="6" height="14" fill="currentColor"/>
+          <rect x="14" y="6" width="6" height="18" fill="currentColor"/>
+          <rect x="23" y="14" width="6" height="10" fill="currentColor"/>
+          <text x="36" y="23" class="logo-type">16BITS</text>
+        </svg>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+    <path d="M0 12 H520" class="divider__line"/>
+    <path d="M600 2 L610 12 L600 22 L590 12 Z" class="divider__gem"/>
+    <path d="M680 12 H1200" class="divider__line"/>
+  </svg>
+</div>
+
+<!-- ============================================================ PACKAGES -->
+<section class="section packages" id="packages">
+  <div class="shell">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Choose your loadout</p>
+      <h2 class="h2">Three ways to walk this</h2>
+      <p class="section-head__sub">
+        Same guide, different distance. Every route starts with the same free map reading —
+        we only pick a tier once we both know what the terrain actually looks like.
+      </p>
+    </header>
+
+    <div class="tiers">
+
+      <!-- EPIC -->
+      <article class="tier tier--epic reveal">
+        <div class="tier__emblem" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="em-glow" cx="32" cy="32" r="29"/>
+            <path class="em-main" d="M32 5 L54 32 L32 59 L10 32 Z"/>
+            <path class="em-facet-l" d="M32 5 L10 32 L32 32 Z"/>
+            <path class="em-facet-r" d="M32 32 L54 32 L32 59 Z"/>
+            <path class="em-line" d="M10 32 H54 M32 5 V59"/>
+          </svg>
+        </div>
+        <p class="tier__rarity">Epic</p>
+        <h3 class="tier__name">The Scouting Run</h3>
+        <p class="tier__blurb">One hard look at where you actually are, and the shortest honest route out.</p>
+        <p class="tier__price"><span class="tier__price-num">$3,400</span><span class="tier__price-unit">one-time</span></p>
+        <ul class="tier__list">
+          <li>Full launch-readiness audit</li>
+          <li>Store page + capsule teardown</li>
+          <li>Wishlist trajectory model</li>
+          <li>90-minute strategy walkthrough</li>
+          <li>Written route map, yours to keep</li>
+        </ul>
+        <a class="btn btn--outline btn--block" href="#newsletter">Take the scouting run</a>
+        <p class="tier__foot">Delivered in 2 weeks · 4 slots a month</p>
+      </article>
+
+      <!-- LEGENDARY -->
+      <article class="tier tier--legendary tier--popular reveal">
+        <p class="tier__flag">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8Z"/></svg>
+          Most chosen
+        </p>
+        <div class="tier__emblem" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="em-glow" cx="32" cy="32" r="29"/>
+            <!-- one continuous horn: curved body opening into a flared bell -->
+            <path class="em-main" d="M13 50 C13 29 26 15 45 11 L57 4 L57 31 L45 23 C33 26 24 36 24 50 Z"/>
+            <path class="em-facet-l" d="M13 50 C13 29 26 15 45 11 L45 16 C30 20 19 33 19 50 Z"/>
+            <path class="em-facet-r" d="M45 17 L57 17 L57 31 L45 23 Z"/>
+            <!-- mouthpiece rim and binding -->
+            <rect class="em-main" x="10" y="49" width="17" height="9" rx="3"/>
+            <path class="em-line" d="M30 17 L34 25 M11 53 H26"/>
+          </svg>
+        </div>
+        <p class="tier__rarity">Legendary</p>
+        <h3 class="tier__name">The Full Campaign</h3>
+        <p class="tier__blurb">I'm in the room from reveal to day thirty. Strategy, beats, and someone to blame.</p>
+        <p class="tier__price"><span class="tier__price-num">$7,900</span><span class="tier__price-unit">/ month</span></p>
+        <ul class="tier__list">
+          <li>Everything in <strong>Epic</strong></li>
+          <li>Beat-by-beat launch calendar</li>
+          <li>Press &amp; creator outreach strategy</li>
+          <li>Weekly working session with me</li>
+          <li>Direct line, same-day answers</li>
+          <li>Day-one war room</li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#newsletter">Start the campaign</a>
+        <p class="tier__foot">6-month minimum · 2 studios at a time</p>
+      </article>
+
+      <!-- MYTHICAL -->
+      <article class="tier tier--mythical reveal">
+        <div class="tier__emblem" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="em-glow" cx="32" cy="33" r="30"/>
+            <!-- flanking shards, cut lower so they read as a cluster -->
+            <path class="em-main"    d="M8 41 L17 31 L17 51 L8 56 Z"/>
+            <path class="em-facet-r" d="M17 31 L17 51 L8 56 L8 41 Z"/>
+            <path class="em-main"    d="M56 43 L47 33 L47 51 L56 56 Z"/>
+            <path class="em-facet-r" d="M47 33 L47 51 L56 56 L56 43 Z"/>
+            <!-- central crystal: table-cut top, not a point -->
+            <path class="em-main"    d="M25 5 L39 5 L47 22 L47 46 L32 59 L17 46 L17 22 Z"/>
+            <path class="em-facet-l" d="M25 5 L17 22 L17 46 L32 59 Z"/>
+            <path class="em-line"    d="M17 22 L32 30 L47 22 M32 30 V59 M25 5 L32 30 L39 5"/>
+          </svg>
+        </div>
+        <p class="tier__rarity">Mythical</p>
+        <h3 class="tier__name">The Guild Contract</h3>
+        <p class="tier__blurb">For studios with a slate. I hold the map across every title you ship this cycle.</p>
+        <p class="tier__price"><span class="tier__price-num">from $21k</span><span class="tier__price-unit">/ quarter</span></p>
+        <ul class="tier__list">
+          <li>Everything in <strong>Legendary</strong></li>
+          <li>Multi-title portfolio sequencing</li>
+          <li>Publisher &amp; platform negotiation support</li>
+          <li>Team training — your people, my playbook</li>
+          <li>Board &amp; investor narrative</li>
+          <li>On-site at two events a year</li>
+        </ul>
+        <a class="btn btn--outline btn--block" href="#newsletter">Enquire about the guild</a>
+        <p class="tier__foot">By conversation only · 1 open slot</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider divider--wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+    <path d="M0 24 C160 4 300 36 480 22 C660 8 780 34 960 24 C1140 14 1280 32 1440 18" fill="none"/>
+  </svg>
+</div>
+
+<!-- ============================================================ TESTIMONIAL WALL -->
+<section class="section proof" id="proof">
+  <div class="shell">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Fellow travellers</p>
+      <h2 class="h2">Everyone who made it out</h2>
+      <p class="section-head__sub">Studio leads, solo devs, and one very tired publishing director.</p>
+    </header>
+
+    <div class="wall">
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>We had 4,000 wishlists and eight weeks. Rowan rebuilt the whole beat plan in a weekend. We hit 61,000 by launch.</blockquote>
+        <figcaption><strong>Mara Ostrowska</strong><span>Creative Director, Hollowfen Games</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>The first call was uncomfortable in the way a good doctor's appointment is uncomfortable. Worth every minute.</blockquote>
+        <figcaption><strong>Devin Achebe</strong><span>Founder, Two Lantern Studio</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>I've hired three agencies. This was the first time someone told me to cut something instead of adding a channel.</blockquote>
+        <figcaption><strong>Priya Raghunathan</strong><span>COO, Nightmarket Interactive</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Our Steam page conversion went from 3.1% to 9.4% off a two-hour teardown. That's the whole story.</blockquote>
+        <figcaption><strong>Jonas Vikström</strong><span>Marketing Lead, Ashvault</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>He talked us out of a $90k influencer spend and into a demo. The demo did more than the money would have.</blockquote>
+        <figcaption><strong>Elena Marchetti</strong><span>CEO, Saltpetre Collective</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="4 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star star--empty" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Brutally direct. I didn't enjoy week one. I did enjoy the sales chart.</blockquote>
+        <figcaption><strong>Tomás Reyes</strong><span>Solo dev, Verdigris</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Twelve years in publishing and I still took four pages of notes on the first call.</blockquote>
+        <figcaption><strong>Karin Boedeker</strong><span>Publishing Director, Grauwald</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>We were three weeks from announcing into the worst possible window. He moved us. Best call anyone made that year.</blockquote>
+        <figcaption><strong>Ade Ogunleye</strong><span>Studio Head, Bright Hollow</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>No account manager, no deck, no upsell. Just the person who knows the answer, on the call.</blockquote>
+        <figcaption><strong>Hana Little</strong><span>Producer, Ninefold</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Our second game outsold the first by 7x on a smaller budget. Same team. Different map.</blockquote>
+        <figcaption><strong>Lukas Brenner</strong><span>Co-founder, Tin Compass</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>Day one felt boring. Everything had already been decided six months earlier. That's the point, apparently.</blockquote>
+        <figcaption><strong>Siobhán Kelly</strong><span>Director, Wrenlight</span></figcaption>
+      </figure>
+
+      <figure class="quote reveal">
+        <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
+        <blockquote>I came for the wishlist numbers. I stayed because someone finally told me the truth about our trailer.</blockquote>
+        <figcaption><strong>Yuki Tanabe</strong><span>Art Director, Paper Lantern</span></figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+    <path d="M0 12 H500" class="divider__line"/>
+    <path d="M560 20 L580 4 L600 20 Z" class="divider__tri"/>
+    <path d="M600 20 L620 4 L640 20 Z" class="divider__tri divider__tri--alt"/>
+    <path d="M700 12 H1200" class="divider__line"/>
+  </svg>
+</div>
+
+<!-- ============================================================ CASE STUDIES -->
+<section class="section quests" id="quests">
+  <div class="shell">
+    <header class="section-head reveal">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Completed quests</p>
+      <h2 class="h2">Where the map led</h2>
+      <p class="section-head__sub">Six routes, six very different kinds of trouble.</p>
+    </header>
+
+    <div class="quest-grid">
+
+      <a class="quest reveal" href="#">
+        <span class="quest__sigil" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M20 3 L34 20 L20 37 L6 20 Z"/><path d="M20 11 L27 20 L20 29 L13 20 Z" class="sigil-inner"/></svg>
+        </span>
+        <h3 class="quest__name">Hollowfen</h3>
+        <p class="quest__result">4k → 61k wishlists in eight weeks before a delayed launch.</p>
+        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="quest reveal" href="#">
+        <span class="quest__sigil" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M20 6 L25 20 L20 34 L15 20 Z" class="sigil-inner"/></svg>
+        </span>
+        <h3 class="quest__name">Ashvault</h3>
+        <p class="quest__result">Store conversion 3.1% → 9.4% from a single page teardown.</p>
+        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="quest reveal" href="#">
+        <span class="quest__sigil" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M20 4 L36 13 V27 L20 36 L4 27 V13 Z"/><path d="M20 13 L28 17.5 V24 L20 28 L12 24 V17.5 Z" class="sigil-inner"/></svg>
+        </span>
+        <h3 class="quest__name">Saltpetre Collective</h3>
+        <p class="quest__result">Killed a $90k creator spend, shipped a demo, tripled the funnel.</p>
+        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="quest reveal" href="#">
+        <span class="quest__sigil" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M6 30 L20 5 L34 30 Z"/><path d="M14 30 L20 18 L26 30 Z" class="sigil-inner"/></svg>
+        </span>
+        <h3 class="quest__name">Tin Compass</h3>
+        <p class="quest__result">Second title outsold the first 7× on 40% of the budget.</p>
+        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="quest reveal" href="#">
+        <span class="quest__sigil" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M20 4 L24 16 L36 20 L24 24 L20 36 L16 24 L4 20 L16 16 Z"/></svg>
+        </span>
+        <h3 class="quest__name">Bright Hollow</h3>
+        <p class="quest__result">Moved a reveal out of a crowded window. 3× the coverage.</p>
+        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="quest reveal" href="#">
+        <span class="quest__sigil" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><rect x="7" y="7" width="26" height="26" rx="4" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="5" class="sigil-inner"/></svg>
+        </span>
+        <h3 class="quest__name">Nightmarket</h3>
+        <p class="quest__result">Cut four channels to one. Cost per wishlist fell 68%.</p>
+        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ DISPATCHES -->
+<section class="section dispatches" id="dispatches">
+  <div class="shell">
+    <header class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__rule"></span> Dispatches</p>
+        <h2 class="h2">Notes from the trail</h2>
+      </div>
+      <a class="link-arrow" href="#">View all dispatches <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </header>
+
+    <div class="posts">
+
+      <article class="post reveal">
+        <div class="post__art" aria-hidden="true">
+          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+            <rect width="400" height="220" class="pa-bg"/>
+            <path d="M0 170 L70 110 L120 150 L190 84 L250 140 L320 96 L400 156 L400 220 L0 220 Z" class="pa-far"/>
+            <path d="M0 200 L90 154 L170 196 L260 150 L340 194 L400 168 L400 220 L0 220 Z" class="pa-near"/>
+            <circle cx="312" cy="62" r="26" class="pa-orb"/>
+            <path d="M40 60 h44 M40 76 h28" class="pa-mark"/>
+          </svg>
+        </div>
+        <p class="post__meta">Steam · 9 min read</p>
+        <h3 class="post__title">The wishlist number that actually predicts your launch</h3>
+        <p class="post__excerpt">It isn't the total. It's the slope in the fourteen days after your last beat — and almost nobody tracks it.</p>
+        <span class="post__link">Read dispatch <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+      <article class="post reveal">
+        <div class="post__art" aria-hidden="true">
+          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+            <rect width="400" height="220" class="pa-bg"/>
+            <path d="M0 186 C80 150 140 200 210 172 C280 144 340 186 400 158 L400 220 L0 220 Z" class="pa-far"/>
+            <path d="M0 206 C90 182 160 214 240 194 C320 174 360 206 400 190 L400 220 L0 220 Z" class="pa-near"/>
+            <path d="M200 40 L216 74 L252 80 L226 106 L232 142 L200 124 L168 142 L174 106 L148 80 L184 74 Z" class="pa-orb"/>
+          </svg>
+        </div>
+        <p class="post__meta">Press · 6 min read</p>
+        <h3 class="post__title">Why your press email gets deleted in four seconds</h3>
+        <p class="post__excerpt">I asked eleven editors to forward me the pitches they ignored. The pattern was depressingly consistent.</p>
+        <span class="post__link">Read dispatch <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+      <article class="post reveal">
+        <div class="post__art" aria-hidden="true">
+          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+            <rect width="400" height="220" class="pa-bg"/>
+            <path d="M0 180 L60 180 L60 140 L130 140 L130 168 L200 168 L200 108 L270 108 L270 148 L340 148 L340 92 L400 92 L400 220 L0 220 Z" class="pa-far"/>
+            <path d="M0 210 L400 186 L400 220 L0 220 Z" class="pa-near"/>
+            <circle cx="84" cy="66" r="20" class="pa-orb"/>
+            <path d="M300 50 l12 22 l-24 0 Z" class="pa-mark-fill"/>
+          </svg>
+        </div>
+        <p class="post__meta">Timing · 12 min read</p>
+        <h3 class="post__title">Every launch window is bad. Pick the right kind of bad.</h3>
+        <p class="post__excerpt">There is no empty week. There are only weeks where the noise is shaped like you, and weeks where it isn't.</p>
+        <span class="post__link">Read dispatch <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="shell newsletter__inner">
+
+    <div class="newsletter__copy reveal">
+      <p class="eyebrow eyebrow--onart"><span class="eyebrow__rule"></span> The signal fire</p>
+      <h2 class="h2">One dispatch. Every other Thursday.</h2>
+      <p>
+        A single hard-won lesson from a live launch, written the week it happened. No roundups,
+        no sponsors, no "5 tips." 6,400 developers read it. You can leave whenever you like.
+      </p>
+      <form class="signup" id="signupForm" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <div class="signup__row">
+          <input id="email" name="email" type="email" placeholder="you@yourstudio.com" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">Light the beacon</button>
+        </div>
+        <p class="signup__msg" id="signupMsg" role="status"></p>
+      </form>
+    </div>
+
+    <div class="newsletter__art reveal" aria-hidden="true">
+      <svg viewBox="0 0 420 360">
+        <defs>
+          <radialGradient id="beaconGlow" cx="50%" cy="42%">
+            <stop offset="0%"   stop-color="#FFC46B" stop-opacity=".9"/>
+            <stop offset="42%"  stop-color="#FF7A3C" stop-opacity=".35"/>
+            <stop offset="100%" stop-color="#FF5FA8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="210" cy="150" r="150" fill="url(#beaconGlow)"/>
+
+        <!-- rings -->
+        <circle cx="210" cy="150" r="104" class="nl-ring"/>
+        <circle cx="210" cy="150" r="132" class="nl-ring nl-ring--faint"/>
+
+        <!-- distant peaks -->
+        <path d="M0 322 L58 262 L96 300 L146 250 L186 292 L186 322 Z" class="nl-peak"/>
+        <path d="M234 322 L274 288 L312 314 L358 262 L420 322 Z" class="nl-peak"/>
+
+        <!-- cairn -->
+        <g class="nl-stone">
+          <ellipse cx="210" cy="322" rx="86" ry="16"/>
+          <path d="M158 320 h104 l-12 -34 h-80 Z"/>
+          <path d="M170 286 h80 l-11 -30 h-58 Z"/>
+          <path d="M186 256 h48 l-9 -26 h-30 Z"/>
+        </g>
+
+        <!-- brazier -->
+        <path d="M180 230 h60 l-8 -26 h-44 Z" class="nl-brazier"/>
+        <path d="M172 204 h76" class="nl-brazier-lip"/>
+
+        <!-- flames -->
+        <path class="flame" d="M210 202 C238 164 226 132 210 92 C194 132 182 164 210 202 Z" fill="#FF7A3C"/>
+        <path class="flame flame--inner" d="M210 200 C228 172 220 150 210 118 C200 150 192 172 210 200 Z" fill="#FFB05C"/>
+        <path class="flame flame--core" d="M210 198 C219 178 215 164 210 144 C205 164 201 178 210 198 Z" fill="#FFE9B0"/>
+
+        <!-- sparks -->
+        <g class="nl-spark" fill="#FFC46B">
+          <circle cx="252" cy="104" r="3"/><circle cx="168" cy="86" r="2.2"/>
+          <circle cx="272" cy="152" r="2"/><circle cx="146" cy="140" r="2.6"/>
+          <circle cx="238" cy="58" r="1.8"/><circle cx="184" cy="46" r="2.2"/>
+        </g>
+
+      </svg>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <a class="brand" href="#top">
+          <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 2 L34 20 L20 38 L6 20 Z" class="mark-outer"/>
+            <path d="M20 9.5 L28.5 20 L20 30.5 L11.5 20 Z" class="mark-inner"/>
+            <path d="M20 14 L23 20 L20 26 L17 20 Z" class="mark-core"/>
+          </svg>
+          <span class="brand__text">Wayfinder<span class="brand__dot">.</span></span>
+        </a>
+        <p class="footer__tagline">Nobody makes it out of the wilderness on vibes and a trailer.</p>
+        <a class="footer__email" href="mailto:rowan@wayfinder.gg">rowan@wayfinder.gg</a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div>
+          <h3>The path</h3>
+          <a href="#packages">Packages</a>
+          <a href="#quests">Case studies</a>
+          <a href="#proof">Testimonials</a>
+        </div>
+        <div>
+          <h3>Along the way</h3>
+          <a href="#dispatches">Dispatches</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="#guide">About Rowan</a>
+        </div>
+        <div>
+          <h3>The small print</h3>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> Wayfinder Consulting Ltd. Made on a long walk.</p>
+      <ul class="socials">
+        <li><a href="#" aria-label="Bluesky">
+          <svg viewBox="0 0 24 24"><path d="M12 10.6C10.8 8.2 7.6 4 5 3.2 2.6 2.5 2 3.6 2 5.2c0 1.5.9 6.3 1.4 7.1.9 1.3 2.4 1.5 3.8 1.2-2.4.4-3 1.9-1.7 3.4 2.6 2.9 3.7-.7 4-1.6.1-.2.1-.3.2-.3.1 0 .1.1.2.3.3.9 1.4 4.5 4 1.6 1.3-1.5.7-3-1.7-3.4 1.4.3 2.9.1 3.8-1.2.5-.8 1.4-5.6 1.4-7.1 0-1.6-.6-2.7-3-2C16.4 4 13.2 8.2 12 10.6Z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM2.8 9h3.4v12H2.8V9ZM9.2 9h3.3v1.7h.05c.46-.85 1.6-1.75 3.25-1.75 3.48 0 4.2 2.2 4.2 5.1V21h-3.4v-5.3c0-1.27-.02-2.9-1.8-2.9-1.8 0-2.1 1.38-2.1 2.8V21H9.2V9Z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="Mastodon">
+          <svg viewBox="0 0 24 24"><path d="M21 9.4c0-4-2.6-5.2-2.6-5.2C17.1 3.6 14.9 3.3 12.6 3.3h-.05c-2.3 0-4.5.3-5.8.9 0 0-2.6 1.2-2.6 5.2 0 .9-.02 2 .01 3.2.1 4 .74 8 4.5 9 1.72.45 3.2.55 4.4.48 2.16-.12 3.38-.77 3.38-.77l-.07-1.57s-1.55.49-3.29.43c-1.72-.06-3.54-.19-3.82-2.3a4.3 4.3 0 0 1-.04-.6s1.69.42 3.83.51c1.31.06 2.54-.07 3.79-.22 2.4-.29 4.48-1.77 4.74-3.12.41-2.13.38-5.2.38-5.2Zm-3.1 5.16h-1.93V9.85c0-1-.42-1.5-1.26-1.5-.93 0-1.4.6-1.4 1.79v2.6h-1.91v-2.6c0-1.19-.47-1.79-1.4-1.79-.84 0-1.26.5-1.26 1.5v4.71H6.8V9.71c0-1 .25-1.79.77-2.37a2.6 2.6 0 0 1 2-.88c.94 0 1.65.36 2.11 1.08l.48.8.48-.8c.46-.72 1.17-1.08 2.11-1.08.8 0 1.47.3 2 .88.51.58.77 1.37.77 2.37v4.85Z"/></svg>
+        </a></li>
+        <li><a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.5 7.2a2.8 2.8 0 0 0-1.95-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.55.5a2.8 2.8 0 0 0-1.95 2C1 9 1 12 1 12s0 3 .5 4.8a2.8 2.8 0 0 0 1.95 2c1.75.5 8.55.5 8.55.5s6.8 0 8.55-.5a2.8 2.8 0 0 0 1.95-2C23 15 23 12 23 12s0-3-.5-4.8ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <defs>
+    <path id="starPath" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8Z"/>
+  </defs>
+</svg>
+
+<script src="main.js"></script>
+</body>
+</html>

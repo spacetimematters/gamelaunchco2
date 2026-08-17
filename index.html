@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Joel — I make indie games go viral</title>
+<title>GameLaunch — I make indie games go viral</title>
 <meta name="description" content="Editing, thumbnails and research behind 200M+ views, and sponsored campaigns for 180+ indie games. If you built something worth playing, the problem isn't the game.">
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="styles.css">
@@ -23,20 +23,20 @@
 <!-- ============================================================ NAV -->
 <header class="nav" id="nav">
   <div class="shell nav__inner">
-    <a class="brand" href="#top" aria-label="Joel — home">
+    <a class="brand" href="#top" aria-label="GameLaunch — home">
       <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M20 2 L34 20 L20 38 L6 20 Z" class="mark-outer"/>
-        <path d="M20 9.5 L28.5 20 L20 30.5 L11.5 20 Z" class="mark-inner"/>
-        <path d="M20 14 L23 20 L20 26 L17 20 Z" class="mark-core"/>
+        <path class="mark-shield" d="M4 4 H36 V21 C36 30 28 35 20 38 C12 35 4 30 4 21 Z"/>
+        <path class="mark-chief" d="M4 4 H36 V13 H4 Z"/>
+        <path class="mark-charge" d="M20 15 L26 22 L20 31 L14 22 Z"/>
       </svg>
-      <span class="brand__text">Joel<span class="brand__dot">.</span></span>
+      <span class="brand__text">GameLaunch<span class="brand__dot">.</span></span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
       <a href="#packages">Work</a>
       <a href="#proof">Proof</a>
       <a href="#quests">Results</a>
-      <a href="#dispatches">Notes</a>
+      <a href="blog/">Notes</a>
     </nav>
 
     <div class="nav__actions">
@@ -69,24 +69,24 @@
     <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
       <defs>
         <linearGradient id="daySky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#FFDDB8"/>
-          <stop offset="36%"  stop-color="#FFC2D6"/>
-          <stop offset="70%"  stop-color="#CEC2FA"/>
-          <stop offset="100%" stop-color="#B0A3F0"/>
+          <stop offset="0%"   stop-color="#DCEAFF"/>
+          <stop offset="34%"  stop-color="#E8F1FF"/>
+          <stop offset="68%"  stop-color="#F2F7FF"/>
+          <stop offset="100%" stop-color="#FFFFFF"/>
         </linearGradient>
         <radialGradient id="dayGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#FFF3C4" stop-opacity="1"/>
-          <stop offset="55%"  stop-color="#FFD98E" stop-opacity=".55"/>
-          <stop offset="100%" stop-color="#FFC46B" stop-opacity="0"/>
+          <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="1"/>
+          <stop offset="52%"  stop-color="#9CC4FF" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
         </radialGradient>
         <linearGradient id="dayFar" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#A392EC"/><stop offset="100%" stop-color="#8878DE"/>
+          <stop offset="0%" stop-color="#C9D9F0"/><stop offset="100%" stop-color="#AEC3E2"/>
         </linearGradient>
         <linearGradient id="dayMid" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#7361CE"/><stop offset="100%" stop-color="#5745AC"/>
+          <stop offset="0%" stop-color="#94AECE"/><stop offset="100%" stop-color="#7492B8"/>
         </linearGradient>
         <linearGradient id="dayNear" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#443680"/><stop offset="100%" stop-color="#2C2159"/>
+          <stop offset="0%" stop-color="#4E668A"/><stop offset="100%" stop-color="#2C3B54"/>
         </linearGradient>
       </defs>
 
@@ -94,11 +94,11 @@
 
       <!-- sun -->
       <circle cx="962" cy="188" r="240" fill="url(#dayGlow)"/>
-      <circle cx="962" cy="188" r="72" fill="#FFF6D6"/>
-      <circle cx="962" cy="188" r="72" fill="none" stroke="#FFB86B" stroke-opacity=".5" stroke-width="2"/>
+      <circle cx="962" cy="188" r="72" fill="#FFFFFF"/>
+      <circle cx="962" cy="188" r="72" fill="none" stroke="#1F51FF" stroke-opacity=".55" stroke-width="2"/>
 
       <!-- drifting clouds -->
-      <g fill="#FFFFFF" opacity=".42">
+      <g fill="#FFFFFF" opacity=".7">
         <ellipse cx="300" cy="150" rx="120" ry="26"/>
         <ellipse cx="360" cy="132" rx="78"  ry="20"/>
         <ellipse cx="760" cy="238" rx="96"  ry="20"/>
@@ -106,15 +106,15 @@
       </g>
 
       <!-- birds -->
-      <g fill="none" stroke="#6F5DC4" stroke-width="3" stroke-linecap="round" opacity=".65">
+      <g fill="none" stroke="#5A7398" stroke-width="3" stroke-linecap="round" opacity=".65">
         <path d="M470 210c8-9 16-9 24 0M494 210c8-9 16-9 24 0"/>
         <path d="M566 168c6-7 12-7 18 0M584 168c6-7 12-7 18 0"/>
       </g>
 
       <!-- far range -->
       <path fill="url(#dayFar)" d="M0 470 L150 336 L246 404 L376 274 L470 372 L560 300 L664 420 L780 330 L900 436 L1010 366 L1130 458 L1260 380 L1440 486 L1440 720 L0 720 Z"/>
-      <path fill="#FFFFFF" opacity=".8" d="M376 274 L420 320 L400 330 L376 316 L352 332 L332 322 Z"/>
-      <path fill="#FFFFFF" opacity=".7" d="M150 336 L186 374 L168 382 L150 370 L128 384 L112 374 Z"/>
+      <path fill="#FFFFFF" opacity=".95" d="M376 274 L420 320 L400 330 L376 316 L352 332 L332 322 Z"/>
+      <path fill="#FFFFFF" opacity=".9" d="M150 336 L186 374 L168 382 L150 370 L128 384 L112 374 Z"/>
 
       <!-- mid range -->
       <path fill="url(#dayMid)" d="M0 560 L120 470 L230 540 L340 452 L448 546 L560 468 L690 566 L810 496 L940 574 L1070 500 L1200 578 L1330 512 L1440 570 L1440 720 L0 720 Z"/>
@@ -124,13 +124,13 @@
 
       <!-- winding path -->
       <path d="M700 720 C700 660 620 650 636 606 C652 562 742 566 754 528 C766 490 706 478 716 452"
-            fill="none" stroke="#F6EEFF" stroke-width="22" stroke-linecap="round" opacity=".92"/>
+            fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" opacity=".92"/>
       <path d="M700 720 C700 660 620 650 636 606 C652 562 742 566 754 528 C766 490 706 478 716 452"
-            fill="none" stroke="#B79BFF" stroke-width="22" stroke-linecap="round"
+            fill="none" stroke="#9CC4FF" stroke-width="22" stroke-linecap="round"
             stroke-dasharray="2 26" opacity=".6"/>
 
       <!-- pines -->
-      <g fill="#2E2460">
+      <g fill="#233047">
         <path d="M300 660 L318 700 L282 700 Z M300 636 L314 668 L286 668 Z"/><rect x="296" y="698" width="8" height="16"/>
         <path d="M360 676 L376 710 L344 710 Z M360 656 L373 682 L347 682 Z"/><rect x="356" y="708" width="8" height="14"/>
         <path d="M1080 646 L1100 690 L1060 690 Z M1080 620 L1096 656 L1064 656 Z"/><rect x="1076" y="688" width="8" height="18"/>
@@ -139,14 +139,14 @@
 
       <!-- traveller: cloak, pack, wide-brim hat, lantern on the staff -->
       <g transform="translate(686 616) scale(1.6)">
-        <ellipse cx="0" cy="1" rx="15" ry="3" fill="#1F1747" opacity=".28"/>
-        <path d="M13 1 L9 -42" stroke="#241B53" stroke-width="2.4" stroke-linecap="round"/>
-        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#241B53"/>
-        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#241B53"/>
-        <circle cx="0" cy="-31" r="4.4" fill="#241B53"/>
-        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#241B53"/>
-        <circle cx="9" cy="-42" r="3" fill="#FFB05C"/>
-        <circle cx="9" cy="-42" r="6.5" fill="#FFB05C" opacity=".25"/>
+        <ellipse cx="0" cy="1" rx="15" ry="3" fill="#233047" opacity=".25"/>
+        <path d="M13 1 L9 -42" stroke="#233047" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#233047"/>
+        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#233047"/>
+        <circle cx="0" cy="-31" r="4.4" fill="#233047"/>
+        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#233047"/>
+        <circle cx="9" cy="-42" r="3" fill="#1F51FF"/>
+        <circle cx="9" cy="-42" r="6.5" fill="#00C2FF" opacity=".35"/>
       </g>
     </svg>
   </div>
@@ -156,37 +156,37 @@
     <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
       <defs>
         <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#070A1F"/>
-          <stop offset="42%"  stop-color="#141034"/>
-          <stop offset="76%"  stop-color="#2A1A50"/>
-          <stop offset="100%" stop-color="#3B1F5C"/>
+          <stop offset="0%"   stop-color="#10141C"/>
+          <stop offset="42%"  stop-color="#171C26"/>
+          <stop offset="76%"  stop-color="#1D232E"/>
+          <stop offset="100%" stop-color="#263041"/>
         </linearGradient>
         <radialGradient id="moonGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#CFE2FF" stop-opacity=".55"/>
-          <stop offset="100%" stop-color="#8FA8FF" stop-opacity="0"/>
+          <stop offset="0%"   stop-color="#38D6FF" stop-opacity=".42"/>
+          <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
         </radialGradient>
         <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#6B4FE0" stop-opacity="0"/>
-          <stop offset="30%"  stop-color="#8C6BFF" stop-opacity=".42"/>
-          <stop offset="58%"  stop-color="#7BC7E8" stop-opacity=".32"/>
-          <stop offset="82%"  stop-color="#5CE0D8" stop-opacity=".18"/>
-          <stop offset="100%" stop-color="#5CE0D8" stop-opacity="0"/>
+          <stop offset="0%"   stop-color="#1F51FF" stop-opacity="0"/>
+          <stop offset="30%"  stop-color="#1F51FF" stop-opacity=".34"/>
+          <stop offset="58%"  stop-color="#38D6FF" stop-opacity=".3"/>
+          <stop offset="82%"  stop-color="#4D7CFF" stop-opacity=".18"/>
+          <stop offset="100%" stop-color="#4D7CFF" stop-opacity="0"/>
         </linearGradient>
         <linearGradient id="nightFar" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#2A2258"/><stop offset="100%" stop-color="#1A1440"/>
+          <stop offset="0%" stop-color="#2E3849"/><stop offset="100%" stop-color="#222A38"/>
         </linearGradient>
         <linearGradient id="nightMid" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#191338"/><stop offset="100%" stop-color="#100C28"/>
+          <stop offset="0%" stop-color="#1B212C"/><stop offset="100%" stop-color="#151A23"/>
         </linearGradient>
         <radialGradient id="lanternGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#FFD79A" stop-opacity=".8"/>
-          <stop offset="45%"  stop-color="#FFC46B" stop-opacity=".28"/>
-          <stop offset="100%" stop-color="#FFC46B" stop-opacity="0"/>
+          <stop offset="0%"   stop-color="#8FE6FF" stop-opacity=".85"/>
+          <stop offset="45%"  stop-color="#38D6FF" stop-opacity=".32"/>
+          <stop offset="100%" stop-color="#38D6FF" stop-opacity="0"/>
         </radialGradient>
         <radialGradient id="fireGlow" cx="50%" cy="50%">
-          <stop offset="0%"   stop-color="#FFB05C" stop-opacity=".85"/>
-          <stop offset="45%"  stop-color="#FF7A3C" stop-opacity=".35"/>
-          <stop offset="100%" stop-color="#FF5FA8" stop-opacity="0"/>
+          <stop offset="0%"   stop-color="#8FE6FF" stop-opacity=".9"/>
+          <stop offset="45%"  stop-color="#38D6FF" stop-opacity=".42"/>
+          <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
         </radialGradient>
       </defs>
 
@@ -197,7 +197,7 @@
       <path d="M-40 300 C260 236 460 348 760 288 C1060 228 1240 330 1480 276 L1480 322 C1240 376 1060 274 760 334 C460 394 260 282 -40 346 Z" fill="url(#aurora)" opacity=".28"/>
 
       <!-- stars -->
-      <g fill="#EAF0FF" class="night-stars">
+      <g fill="#DCE8FF" class="night-stars">
         <circle cx="80"  cy="72"  r="1.8"/><circle cx="164" cy="140" r="1.2"/><circle cx="248" cy="58"  r="2.1"/>
         <circle cx="322" cy="188" r="1.3"/><circle cx="404" cy="96"  r="1.7"/><circle cx="470" cy="42"  r="1.1"/>
         <circle cx="548" cy="152" r="2"/>  <circle cx="628" cy="84"  r="1.4"/><circle cx="702" cy="46"  r="1.8"/>
@@ -210,25 +210,25 @@
       </g>
 
       <!-- constellation: the wayfinder -->
-      <g stroke="#8C6BFF" stroke-width="1.2" opacity=".75" fill="none">
+      <g stroke="#38D6FF" stroke-width="1.4" opacity=".85" fill="none">
         <path d="M248 58 L322 188 L404 96 L470 42"/>
         <path d="M322 188 L164 140"/>
       </g>
-      <g fill="#C9B8FF">
+      <g fill="#38D6FF">
         <circle cx="248" cy="58" r="3"/><circle cx="322" cy="188" r="3"/>
         <circle cx="404" cy="96" r="3"/><circle cx="470" cy="42" r="2.4"/><circle cx="164" cy="140" r="2.4"/>
       </g>
 
       <!-- moon: a true crescent, kept clear of the headline column -->
       <circle cx="972" cy="140" r="170" fill="url(#moonGlow)"/>
-      <path d="M990 86 A54 54 0 1 0 990 194 A70 70 0 0 1 990 86 Z" fill="#EDF2FF"/>
-      <g fill="#C2CEEA" opacity=".55">
+      <path d="M990 86 A54 54 0 1 0 990 194 A70 70 0 0 1 990 86 Z" fill="#EAF3FF"/>
+      <g fill="#93A7C6" opacity=".55">
         <circle cx="964" cy="118" r="5.5"/><circle cx="958" cy="158" r="3.4"/><circle cx="975" cy="182" r="2.6"/>
       </g>
 
       <!-- far range with moonlit caps -->
       <path fill="url(#nightFar)" d="M0 498 L128 392 L232 462 L370 320 L468 424 L582 348 L690 456 L820 372 L946 470 L1076 396 L1206 486 L1330 412 L1440 500 L1440 720 L0 720 Z"/>
-      <g fill="#A9B8F5" opacity=".55">
+      <g fill="#7FA3D6" opacity=".5">
         <path d="M370 320 L410 362 L392 372 L370 358 L348 374 L330 362 Z"/>
         <path d="M820 372 L852 406 L836 414 L820 402 L800 416 L786 406 Z"/>
       </g>
@@ -237,9 +237,9 @@
       <path fill="url(#nightMid)" d="M0 588 L140 500 L262 566 L390 486 L510 576 L640 504 L772 588 L900 522 L1032 600 L1160 530 L1290 604 L1440 546 L1440 720 L0 720 Z"/>
 
       <!-- lake reflection band -->
-      <path fill="#221A52" d="M0 640 L1440 616 L1440 720 L0 720 Z"/>
-      <path fill="#2C2266" opacity=".5" d="M0 640 L1440 616 L1440 660 L0 686 Z"/>
-      <g stroke="#7A66D0" stroke-width="2" stroke-linecap="round" opacity=".85">
+      <path fill="#161B24" d="M0 640 L1440 616 L1440 720 L0 720 Z"/>
+      <path fill="#1F2735" opacity=".7" d="M0 640 L1440 616 L1440 660 L0 686 Z"/>
+      <g stroke="#3E4C64" stroke-width="2" stroke-linecap="round" opacity=".85">
         <path d="M120 668 h90"/><path d="M250 690 h140"/><path d="M470 662 h110"/>
         <path d="M980 676 h130"/><path d="M1180 700 h96"/><path d="M620 704 h120"/>
       </g>
@@ -247,47 +247,47 @@
       <!-- campfire + tent -->
       <circle cx="960" cy="614" r="120" fill="url(#fireGlow)"/>
       <g transform="translate(1010 616)">
-        <path d="M0 0 L-46 0 L-23 -44 Z" fill="#241B4E"/>
-        <path d="M-23 -44 L-23 0" stroke="#7C5CFF" stroke-width="2.5" opacity=".8"/>
-        <path d="M-30 0 L-23 -22 L-16 0 Z" fill="#0E0A26"/>
+        <path d="M0 0 L-46 0 L-23 -44 Z" fill="#242C3A"/>
+        <path d="M-23 -44 L-23 0" stroke="#38D6FF" stroke-width="2.5" opacity=".8"/>
+        <path d="M-30 0 L-23 -22 L-16 0 Z" fill="#10141C"/>
       </g>
       <g transform="translate(960 616)">
-        <path d="M-22 -1 L18 -7" stroke="#4A3520" stroke-width="7" stroke-linecap="round"/>
-        <path d="M-18 -7 L22 -2" stroke="#5C4228" stroke-width="7" stroke-linecap="round"/>
-        <path class="flame" d="M0 -6 C10 -18 6 -26 0 -40 C-6 -26 -10 -18 0 -6 Z" fill="#FFB05C"/>
-        <path class="flame flame--inner" d="M0 -8 C5 -16 3 -21 0 -30 C-3 -21 -5 -16 0 -8 Z" fill="#FFE9B0"/>
+        <path d="M-22 -1 L18 -7" stroke="#37424F" stroke-width="7" stroke-linecap="round"/>
+        <path d="M-18 -7 L22 -2" stroke="#465464" stroke-width="7" stroke-linecap="round"/>
+        <path class="flame" d="M0 -6 C10 -18 6 -26 0 -40 C-6 -26 -10 -18 0 -6 Z" fill="#1F51FF"/>
+        <path class="flame flame--inner" d="M0 -8 C5 -16 3 -21 0 -30 C-3 -21 -5 -16 0 -8 Z" fill="#8FE6FF"/>
       </g>
 
       <!-- lantern path -->
-      <g fill="#FFC46B">
+      <g fill="#38D6FF">
         <circle cx="700" cy="672" r="3.4"/><circle cx="756" cy="654" r="2.6"/>
         <circle cx="812" cy="640" r="3"/>  <circle cx="644" cy="694" r="2.4"/>
       </g>
 
       <!-- traveller: same figure as the day scene, lantern doing the work -->
       <g transform="translate(862 620) scale(1.6)">
-        <path d="M13 1 L9 -42" stroke="#08061A" stroke-width="2.4" stroke-linecap="round"/>
-        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#08061A"/>
-        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#08061A"/>
-        <circle cx="0" cy="-31" r="4.4" fill="#08061A"/>
-        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#08061A"/>
+        <path d="M13 1 L9 -42" stroke="#0C1017" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M-13 -8 C-19 -11 -19 -22 -13 -25 L-7 -25 L-7 -8 Z" fill="#0C1017"/>
+        <path d="M-11 1 C-10 -14 -7 -25 0 -27 C7 -25 10 -14 11 1 Z" fill="#0C1017"/>
+        <circle cx="0" cy="-31" r="4.4" fill="#0C1017"/>
+        <path d="M-10 -33 L10 -33 L0 -42 Z" fill="#0C1017"/>
         <circle cx="9" cy="-42" r="18" fill="url(#lanternGlow)"/>
-        <circle cx="9" cy="-42" r="3"  fill="#FFE9B0"/>
+        <circle cx="9" cy="-42" r="3"  fill="#CFF3FF"/>
       </g>
     </svg>
   </div>
 
-  <div class="hero__scrim"></div>
-
   <div class="shell hero__inner">
+    <div class="hero__panel">
     <p class="eyebrow eyebrow--onart">
       <svg class="ico ico--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
       Short-form that makes indie games move
     </p>
     <h1 class="hero__title">
-      You didn't get lost<br>making the game.<br>
+      You didn't get lost making the game.
       <span class="hero__title-accent">Nobody ever saw it.</span>
     </h1>
+    <div class="hero__title-rule" aria-hidden="true"></div>
     <p class="hero__sub">
       I'm Joel. I do the editing, the thumbnails and the research behind 200M+ views, and I've
       run sponsored campaigns for 180+ indie games. If you built something worth playing, the
@@ -300,11 +300,29 @@
       </a>
       <p class="hero__cta-note">DMs are open, and I actually read them.</p>
     </div>
+    </div>
   </div>
 
-  <div class="hero__wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 110" preserveAspectRatio="none">
-      <path d="M0 62 C180 12 320 96 520 74 C720 52 840 6 1040 34 C1200 56 1320 96 1440 66 L1440 110 L0 110 Z"/>
+  <!-- bunting: rope with alternating pennants, closing the hero -->
+  <div class="hero__pennants" aria-hidden="true">
+    <svg viewBox="0 0 1440 44" preserveAspectRatio="none">
+      <path class="pen-rope" d="M0 6 Q360 18 720 6 T1440 6"/>
+      <g class="pen-a">
+        <path d="M0 7 L60 10 L30 44 Z"/><path d="M120 12 L180 13 L150 44 Z"/>
+        <path d="M240 14 L300 14 L270 44 Z"/><path d="M360 14 L420 13 L390 44 Z"/>
+        <path d="M480 12 L540 11 L510 44 Z"/><path d="M600 9 L660 8 L630 44 Z"/>
+        <path d="M720 7 L780 8 L750 44 Z"/><path d="M840 9 L900 11 L870 44 Z"/>
+        <path d="M960 12 L1020 13 L990 44 Z"/><path d="M1080 14 L1140 14 L1110 44 Z"/>
+        <path d="M1200 13 L1260 12 L1230 44 Z"/><path d="M1320 10 L1380 8 L1350 44 Z"/>
+      </g>
+      <g class="pen-b">
+        <path d="M60 10 L120 12 L90 44 Z"/><path d="M180 13 L240 14 L210 44 Z"/>
+        <path d="M300 14 L360 14 L330 44 Z"/><path d="M420 13 L480 12 L450 44 Z"/>
+        <path d="M540 11 L600 9 L570 44 Z"/><path d="M660 8 L720 7 L690 44 Z"/>
+        <path d="M780 8 L840 9 L810 44 Z"/><path d="M900 11 L960 12 L930 44 Z"/>
+        <path d="M1020 13 L1080 14 L1050 44 Z"/><path d="M1140 14 L1200 13 L1170 44 Z"/>
+        <path d="M1260 12 L1320 10 L1290 44 Z"/><path d="M1380 8 L1440 6 L1410 44 Z"/>
+      </g>
     </svg>
   </div>
 </section>
@@ -433,9 +451,25 @@
 <!-- ============================================================ PACKAGES -->
 <section class="section packages" id="packages">
   <div class="shell">
-    <header class="section-head">
-      <p class="eyebrow"><span class="eyebrow__rule"></span> Choose your loadout</p>
-      <h2 class="h2">Three ways to work together</h2>
+    <header class="section-head section-head--center">
+      <p class="eyebrow">How can I help you?</p>
+      <div class="head-ornament">
+        <span class="head-ornament__rule" aria-hidden="true">
+          <svg viewBox="0 0 220 22" preserveAspectRatio="none">
+            <path class="orn-line" d="M0 11 H150"/>
+            <path class="orn-gem" d="M162 11 L172 2 L182 11 L172 20 Z"/>
+            <path class="orn-gem" d="M186 11 L196 2 L206 11 L196 20 Z"/>
+          </svg>
+        </span>
+        <h2>Three ways to work together</h2>
+        <span class="head-ornament__rule" aria-hidden="true">
+          <svg viewBox="0 0 220 22" preserveAspectRatio="none">
+            <path class="orn-gem" d="M14 11 L24 2 L34 11 L24 20 Z"/>
+            <path class="orn-gem" d="M38 11 L48 2 L58 11 L48 20 Z"/>
+            <path class="orn-line" d="M70 11 H220"/>
+          </svg>
+        </span>
+      </div>
       <p class="section-head__sub">
         Same person doing the work either way — what changes is how long I'm on it. Every one
         starts with me actually playing your game and telling you straight whether I can move it.
@@ -455,10 +489,9 @@
             <path class="em-line" d="M10 32 H54 M32 5 V59"/>
           </svg>
         </div>
-        <p class="tier__rarity">Epic</p>
-        <h3 class="tier__name">The Drop</h3>
+        <h3 class="tier__rarity">Epic</h3>
+        <p class="tier__scope">One game &middot; one campaign</p>
         <p class="tier__blurb">One game, one campaign. The clearest way to find out what your game does in the wild.</p>
-        <p class="tier__scope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg> One game · one campaign</p>
         <ul class="tier__list">
           <li>I play it and find the hook</li>
           <li>Short-form cut for the drop</li>
@@ -466,7 +499,7 @@
           <li>Posted across the channels</li>
           <li>Numbers back, no spin</li>
         </ul>
-        <a class="btn btn--outline btn--block" href="mailto:joel@example.com">Send me your game</a>
+        <a class="btn" href="mailto:hello@gamelaunch.co">More info</a>
         <p class="tier__foot">A few slots a month</p>
       </article>
 
@@ -488,10 +521,9 @@
             <path class="em-line" d="M30 17 L34 25 M11 53 H26"/>
           </svg>
         </div>
-        <p class="tier__rarity">Legendary</p>
-        <h3 class="tier__name">The Run</h3>
+        <h3 class="tier__rarity">Legendary</h3>
+        <p class="tier__scope">Ongoing &middot; month to month</p>
         <p class="tier__blurb">A run of content around your beats — announce, demo, launch — instead of one shot in the dark.</p>
-        <p class="tier__scope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg> Ongoing · month to month</p>
         <ul class="tier__list">
           <li>Everything in <strong>Epic</strong>, repeatedly</li>
           <li>Content mapped to your beats</li>
@@ -500,7 +532,7 @@
           <li>Direct line to me, not a queue</li>
           <li>Launch week covered properly</li>
         </ul>
-        <a class="btn btn--primary btn--block" href="mailto:joel@example.com">Start a run</a>
+        <a class="btn" href="mailto:hello@gamelaunch.co">More info</a>
         <p class="tier__foot">Two games at a time, so it stays good</p>
       </article>
 
@@ -520,10 +552,9 @@
             <path class="em-line"    d="M17 22 L32 30 L47 22 M32 30 V59 M25 5 L32 30 L39 5"/>
           </svg>
         </div>
-        <p class="tier__rarity">Mythical</p>
-        <h3 class="tier__name">The Guild</h3>
+        <h3 class="tier__rarity">Mythical</h3>
+        <p class="tier__scope">Custom quote</p>
         <p class="tier__blurb">For publishers and brands with a slate. I take the whole cycle, not one title at a time.</p>
-        <p class="tier__scope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg> Multi-title · by conversation</p>
         <ul class="tier__list">
           <li>Everything in <strong>Legendary</strong></li>
           <li>Sequencing across your whole slate</li>
@@ -532,7 +563,7 @@
           <li>First look at what's landing right now</li>
           <li>Long-term, not campaign by campaign</li>
         </ul>
-        <a class="btn btn--outline btn--block" href="mailto:joel@example.com">Let's talk</a>
+        <a class="btn" href="mailto:hello@gamelaunch.co">More info</a>
         <p class="tier__foot">One open slot</p>
       </article>
     </div>
@@ -717,58 +748,58 @@
         <p class="eyebrow"><span class="eyebrow__rule"></span> Notes</p>
         <h2 class="h2">Things I keep having to explain</h2>
       </div>
-      <a class="link-arrow" href="#">All notes <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="link-arrow" href="blog/">All notes <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </header>
 
     <div class="posts">
 
-      <article class="post">
+      <a class="post" href="blog/friend-slop.html">
         <div class="post__art" aria-hidden="true">
           <svg viewBox="0 0 400 220" preserveAspectRatio="none">
             <rect width="400" height="220" class="pa-bg"/>
-            <path d="M0 170 L70 110 L120 150 L190 84 L250 140 L320 96 L400 156 L400 220 L0 220 Z" class="pa-far"/>
-            <path d="M0 200 L90 154 L170 196 L260 150 L340 194 L400 168 L400 220 L0 220 Z" class="pa-near"/>
-            <circle cx="312" cy="62" r="26" class="pa-orb"/>
-            <path d="M40 60 h44 M40 76 h28" class="pa-mark"/>
+            <path d="M0 176 L70 120 L124 158 L192 96 L252 148 L322 104 L400 160 L400 220 L0 220 Z" class="pa-far"/>
+            <path d="M0 204 L92 160 L172 200 L262 156 L342 198 L400 172 L400 220 L0 220 Z" class="pa-near"/>
+            <rect x="150" y="44" width="100" height="62" class="pa-orb"/>
+            <path d="M150 44 h100 M150 62 h100 M200 44 v62" class="pa-mark"/>
           </svg>
         </div>
-        <p class="post__meta">Thumbnails · 9 min read</p>
-        <h3 class="post__title">Your thumbnail is doing 90% of the work</h3>
-        <p class="post__excerpt">Same video, two thumbnails, a 50× gap in views. Here's what I actually change between the two.</p>
+        <p class="post__meta"><span class="post__tag">Game Design</span> <span>15 Jan 2026</span> <span>· 12 min read</span></p>
+        <h3 class="post__title">The $10 Board Game: Why &lsquo;Friend Slop&rsquo; Is The Highest ROI Niche In Gaming</h3>
+        <p class="post__excerpt">Stop building &lsquo;Live Services&rsquo; and start building digital board games. Why $10 co-op is the highest ROI niche in gaming, and how the Closet Framework makes your players market for you.</p>
         <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </article>
+      </a>
 
-      <article class="post">
+      <a class="post" href="blog/streamers.html">
         <div class="post__art" aria-hidden="true">
           <svg viewBox="0 0 400 220" preserveAspectRatio="none">
             <rect width="400" height="220" class="pa-bg"/>
-            <path d="M0 186 C80 150 140 200 210 172 C280 144 340 186 400 158 L400 220 L0 220 Z" class="pa-far"/>
-            <path d="M0 206 C90 182 160 214 240 194 C320 174 360 206 400 190 L400 220 L0 220 Z" class="pa-near"/>
-            <path d="M200 40 L216 74 L252 80 L226 106 L232 142 L200 124 L168 142 L174 106 L148 80 L184 74 Z" class="pa-orb"/>
+            <path d="M0 190 C80 154 140 204 210 176 C280 148 340 190 400 162 L400 220 L0 220 Z" class="pa-far"/>
+            <path d="M0 208 C90 186 160 216 240 196 C320 176 360 208 400 192 L400 220 L0 220 Z" class="pa-near"/>
+            <path d="M200 40 L232 92 L168 92 Z" class="pa-orb"/>
+            <path d="M140 60 a72 72 0 0 1 120 0 M120 82 a100 100 0 0 1 160 0" class="pa-mark"/>
           </svg>
         </div>
-        <p class="post__meta">Hooks · 6 min read</p>
-        <h3 class="post__title">The first three seconds decide the other ninety</h3>
-        <p class="post__excerpt">Most indie clips open by explaining. The ones that travel open by showing the weirdest thing in the game.</p>
+        <p class="post__meta"><span class="post__tag">Game Marketing</span> <span>15 Jan 2026</span> <span>· 5 min read</span></p>
+        <h3 class="post__title">How To Get 100+ Streamers To Play Your Game (For $0)</h3>
+        <p class="post__excerpt">All you need is 1% of 1 million views to wishlist or buy your game for you to make $10,000. Here is the three-tier system that gets you there without a budget.</p>
         <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </article>
+      </a>
 
-      <article class="post">
+      <a class="post" href="blog/discord.html">
         <div class="post__art" aria-hidden="true">
           <svg viewBox="0 0 400 220" preserveAspectRatio="none">
             <rect width="400" height="220" class="pa-bg"/>
-            <path d="M0 180 L60 180 L60 140 L130 140 L130 168 L200 168 L200 108 L270 108 L270 148 L340 148 L340 92 L400 92 L400 220 L0 220 Z" class="pa-far"/>
-            <path d="M0 210 L400 186 L400 220 L0 220 Z" class="pa-near"/>
-            <circle cx="84" cy="66" r="20" class="pa-orb"/>
-            <path d="M300 50 l12 22 l-24 0 Z" class="pa-mark-fill"/>
+            <path d="M0 182 L64 132 L118 166 L186 108 L250 156 L318 116 L400 168 L400 220 L0 220 Z" class="pa-far"/>
+            <path d="M0 206 L400 184 L400 220 L0 220 Z" class="pa-near"/>
+            <path d="M200 46 C224 82 214 104 200 128 C186 104 176 82 200 46 Z" class="pa-orb"/>
+            <path d="M148 138 h104 M136 152 h128" class="pa-mark"/>
           </svg>
         </div>
-        <p class="post__meta">Campaigns · 12 min read</p>
-        <h3 class="post__title">Why I turn down games I actually like</h3>
-        <p class="post__excerpt">A campaign can't manufacture a hook that isn't in the game yet. Taking the money anyway helps nobody.</p>
+        <p class="post__meta"><span class="post__tag">Game Marketing</span> <span>14 Jan 2026</span> <span>· 6 min read</span></p>
+        <h3 class="post__title">Why 1,000 Discord Members Are Worth More Than 100k Twitter Impressions</h3>
+        <p class="post__excerpt">Stop renting attention on social media. Why Discord is the highest leverage asset in gaming, and how the Campfire Framework turns your players into your sales team.</p>
         <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </article>
-
+      </a>
     </div>
   </div>
 </section>
@@ -799,9 +830,9 @@
       <svg viewBox="0 0 420 360">
         <defs>
           <radialGradient id="beaconGlow" cx="50%" cy="42%">
-            <stop offset="0%"   stop-color="#FFC46B" stop-opacity=".9"/>
-            <stop offset="42%"  stop-color="#FF7A3C" stop-opacity=".35"/>
-            <stop offset="100%" stop-color="#FF5FA8" stop-opacity="0"/>
+            <stop offset="0%"   stop-color="#8FE6FF" stop-opacity=".8"/>
+            <stop offset="42%"  stop-color="#38D6FF" stop-opacity=".4"/>
+            <stop offset="100%" stop-color="#1F51FF" stop-opacity="0"/>
           </radialGradient>
         </defs>
 
@@ -828,12 +859,12 @@
         <path d="M172 204 h76" class="nl-brazier-lip"/>
 
         <!-- flames -->
-        <path class="flame" d="M210 202 C238 164 226 132 210 92 C194 132 182 164 210 202 Z" fill="#FF7A3C"/>
-        <path class="flame flame--inner" d="M210 200 C228 172 220 150 210 118 C200 150 192 172 210 200 Z" fill="#FFB05C"/>
-        <path class="flame flame--core" d="M210 198 C219 178 215 164 210 144 C205 164 201 178 210 198 Z" fill="#FFE9B0"/>
+        <path class="flame" d="M210 202 C238 164 226 132 210 92 C194 132 182 164 210 202 Z" fill="#1F51FF"/>
+        <path class="flame flame--inner" d="M210 200 C228 172 220 150 210 118 C200 150 192 172 210 200 Z" fill="#38D6FF"/>
+        <path class="flame flame--core" d="M210 198 C219 178 215 164 210 144 C205 164 201 178 210 198 Z" fill="#CFF3FF"/>
 
         <!-- sparks -->
-        <g class="nl-spark" fill="#FFC46B">
+        <g class="nl-spark" fill="#38D6FF">
           <circle cx="252" cy="104" r="3"/><circle cx="168" cy="86" r="2.2"/>
           <circle cx="272" cy="152" r="2"/><circle cx="146" cy="140" r="2.6"/>
           <circle cx="238" cy="58" r="1.8"/><circle cx="184" cy="46" r="2.2"/>
@@ -854,14 +885,14 @@
       <div class="footer__brand">
         <a class="brand" href="#top">
           <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M20 2 L34 20 L20 38 L6 20 Z" class="mark-outer"/>
-            <path d="M20 9.5 L28.5 20 L20 30.5 L11.5 20 Z" class="mark-inner"/>
-            <path d="M20 14 L23 20 L20 26 L17 20 Z" class="mark-core"/>
+            <path class="mark-shield" d="M4 4 H36 V21 C36 30 28 35 20 38 C12 35 4 30 4 21 Z"/>
+            <path class="mark-chief" d="M4 4 H36 V13 H4 Z"/>
+            <path class="mark-charge" d="M20 15 L26 22 L20 31 L14 22 Z"/>
           </svg>
-          <span class="brand__text">Joel<span class="brand__dot">.</span></span>
+          <span class="brand__text">GameLaunch<span class="brand__dot">.</span></span>
         </a>
         <p class="footer__tagline">Great games don't travel on their own. That's the whole job.</p>
-        <a class="footer__email" href="mailto:joel@example.com">joel@example.com</a>
+        <a class="footer__email" href="mailto:hello@gamelaunch.co">hello@gamelaunch.co</a>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
@@ -873,7 +904,7 @@
         </div>
         <div>
           <h3>More</h3>
-          <a href="#dispatches">Notes</a>
+          <a href="blog/">Notes</a>
           <a href="#newsletter">Newsletter</a>
           <a href="#guide">About Joel</a>
         </div>
@@ -887,7 +918,7 @@
     </div>
 
     <div class="footer__bottom">
-      <p>© <span id="year">2026</span> Joel. Made between edits.</p>
+      <p>© <span id="year">2026</span> GameLaunch. Made between edits.</p>
       <ul class="socials">
         <li><a href="#" aria-label="Bluesky">
           <svg viewBox="0 0 24 24"><path d="M12 10.6C10.8 8.2 7.6 4 5 3.2 2.6 2.5 2 3.6 2 5.2c0 1.5.9 6.3 1.4 7.1.9 1.3 2.4 1.5 3.8 1.2-2.4.4-3 1.9-1.7 3.4 2.6 2.9 3.7-.7 4-1.6.1-.2.1-.3.2-.3.1 0 .1.1.2.3.3.9 1.4 4.5 4 1.6 1.3-1.5.7-3-1.7-3.4 1.4.3 2.9.1 3.8-1.2.5-.8 1.4-5.6 1.4-7.1 0-1.6-.6-2.7-3-2C16.4 4 13.2 8.2 12 10.6Z"/></svg>

@@ -3,16 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wayfinder — Launch strategy for indie game studios</title>
-<meta name="description" content="Most studios don't fail at making games. They fail at launching them. Wayfinder guides indie teams from first reveal to day-one sales.">
+<title>Joel — I make indie games go viral</title>
+<meta name="description" content="Editing, thumbnails and research behind 200M+ views, and sponsored campaigns for 180+ indie games. If you built something worth playing, the problem isn't the game.">
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="styles.css">
 <script>
-  /* Runs before first paint: the stored terrain never flashes the wrong one,
-     and `.js` gates the scroll-reveal start state so no-JS still shows content. */
-  document.documentElement.classList.add('js');
+  /* Runs before first paint so the stored terrain never flashes the wrong one. */
   try {
-    var t = localStorage.getItem('wayfinder-theme');
+    var t = localStorage.getItem('site-theme');
     if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
   } catch (e) {}
 </script>
@@ -25,20 +23,20 @@
 <!-- ============================================================ NAV -->
 <header class="nav" id="nav">
   <div class="shell nav__inner">
-    <a class="brand" href="#top" aria-label="Wayfinder home">
+    <a class="brand" href="#top" aria-label="Joel — home">
       <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
         <path d="M20 2 L34 20 L20 38 L6 20 Z" class="mark-outer"/>
         <path d="M20 9.5 L28.5 20 L20 30.5 L11.5 20 Z" class="mark-inner"/>
         <path d="M20 14 L23 20 L20 26 L17 20 Z" class="mark-core"/>
       </svg>
-      <span class="brand__text">Wayfinder<span class="brand__dot">.</span></span>
+      <span class="brand__text">Joel<span class="brand__dot">.</span></span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#packages">Packages</a>
+      <a href="#packages">Work</a>
       <a href="#proof">Proof</a>
-      <a href="#quests">Case studies</a>
-      <a href="#dispatches">Dispatches</a>
+      <a href="#quests">Results</a>
+      <a href="#dispatches">Notes</a>
     </nav>
 
     <div class="nav__actions">
@@ -56,7 +54,7 @@
           <span class="theme-toggle__thumb"></span>
         </span>
       </button>
-      <a class="btn btn--sm btn--ghost" href="#packages"><span class="btn__long">Start the quest</span><span class="btn__short" aria-hidden="true">Start</span></a>
+      <a class="btn btn--sm btn--ghost" href="#packages"><span class="btn__long">Send me your game</span><span class="btn__short" aria-hidden="true">Say hi</span></a>
     </div>
   </div>
 </header>
@@ -199,7 +197,7 @@
       <path d="M-40 300 C260 236 460 348 760 288 C1060 228 1240 330 1480 276 L1480 322 C1240 376 1060 274 760 334 C460 394 260 282 -40 346 Z" fill="url(#aurora)" opacity=".28"/>
 
       <!-- stars -->
-      <g fill="#EAF0FF" class="stars">
+      <g fill="#EAF0FF" class="night-stars">
         <circle cx="80"  cy="72"  r="1.8"/><circle cx="164" cy="140" r="1.2"/><circle cx="248" cy="58"  r="2.1"/>
         <circle cx="322" cy="188" r="1.3"/><circle cx="404" cy="96"  r="1.7"/><circle cx="470" cy="42"  r="1.1"/>
         <circle cx="548" cy="152" r="2"/>  <circle cx="628" cy="84"  r="1.4"/><circle cx="702" cy="46"  r="1.8"/>
@@ -284,23 +282,23 @@
   <div class="shell hero__inner">
     <p class="eyebrow eyebrow--onart">
       <svg class="ico ico--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
-      Launch strategy for indie game studios
+      Short-form that makes indie games move
     </p>
     <h1 class="hero__title">
       You didn't get lost<br>making the game.<br>
-      <span class="hero__title-accent">You got lost after.</span>
+      <span class="hero__title-accent">Nobody ever saw it.</span>
     </h1>
     <p class="hero__sub">
-      Three years in the wilderness building something remarkable — then a launch window that
-      swallows it whole. I've walked 60+ studios out of that fog and onto a path that ends in
-      wishlists, coverage, and a day one worth showing your investors.
+      I'm Joel. I do the editing, the thumbnails and the research behind 200M+ views, and I've
+      run sponsored campaigns for 180+ indie games. If you built something worth playing, the
+      problem was never the game — it's that it never reached the people who'd love it.
     </p>
     <div class="hero__cta">
       <a class="btn btn--primary btn--lg" href="#packages">
-        Find your path
+        Send me your game
         <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="hero__cta-note">Free 30-minute map reading. No deck, no pitch.</p>
+      <p class="hero__cta-note">DMs are open, and I actually read them.</p>
     </div>
   </div>
 
@@ -315,10 +313,10 @@
 <section class="bio section" id="guide">
   <div class="shell bio__grid">
 
-    <div class="bio__portrait reveal">
+    <div class="bio__portrait">
       <div class="portrait">
-        <!-- Replace portrait.jpg with the real photo; this is the single photographic element on the page -->
-        <img src="assets/portrait.jpg" alt="Rowan Vale, launch strategist" width="520" height="620" loading="lazy" onerror="this.closest('.portrait').classList.add('portrait--placeholder')">
+        <!-- Replace portrait.jpg with a real photo of Joel; the single photographic element on the page -->
+        <img src="assets/portrait.jpg" alt="Joel" width="520" height="620" loading="lazy" onerror="this.closest('.portrait').classList.add('portrait--placeholder')">
         <div class="portrait__fallback" aria-hidden="true">
           <svg viewBox="0 0 200 240">
             <rect width="200" height="240" rx="8" class="pf-bg"/>
@@ -332,23 +330,28 @@
         </svg>
         <div class="portrait__badge">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg>
-          <span>Guide<br>since '14</span>
+          <span>Editing<br>&amp; thumbs</span>
         </div>
       </div>
     </div>
 
-    <div class="bio__body reveal">
-      <p class="eyebrow"><span class="eyebrow__rule"></span> Your guide</p>
-      <h2 class="h2">I'm Rowan. I've shipped 60+ games and lit the flares on a few disasters.</h2>
+    <div class="bio__body">
+      <p class="eyebrow"><span class="eyebrow__rule"></span> Who you'd be working with</p>
+      <h2 class="h2">I'm Joel. I'm the machine behind the views.</h2>
       <p class="lede">
-        Eleven years running launch and publishing for studios between four people and four hundred.
-        Two BAFTA-nominated titles, one console launch that went sideways in public, and a very long
-        list of things I will never let you do again.
+        Editing, thumbnails, and the research that decides what gets made in the first place —
+        that's my half. 200M+ views of it, and sponsored campaigns for 180+ indie games.
       </p>
       <p>
-        I'm not an agency. There's no account manager, no junior on your Slack, no deck full of
-        stock arrows. You get me, a map of the terrain ahead, and a plan you can actually execute
-        with the team you already have.
+        I met Andy on Instagram eight years ago. We bonded over the games we both played and
+        never really stopped; he's the voice on camera, a Twitch and YouTube Partner posting as
+        AndySlaps, and I build everything around him. Our newest channel did 15M+ views in its
+        first 90 days, and honestly I'm having more fun than I've ever had.
+      </p>
+      <p>
+        What that means for you: I'm not an agency and there's no account manager. You get the
+        person who cuts the video, tests the thumbnail, and can tell you in one watch whether
+        your game has a hook worth building a campaign on.
       </p>
 
       <figure class="pullquote">
@@ -356,68 +359,63 @@
           <path d="M0 32V18C0 8 5 2 15 0l2 6c-5 2-7 5-7 9h7v17H0Zm23 0V18C23 8 28 2 38 0l2 6c-5 2-7 5-7 9h7v17H23Z"/>
         </svg>
         <blockquote>
-          A launch isn't a day. It's an eighteen-month walk, and almost everyone
-          starts it about a year too late.
+          If you're a dev with a game you believe in, or a brand that wants to collab —
+          the DMs are open, and I actually read them.
         </blockquote>
       </figure>
 
       <ul class="bio__stats">
-        <li><strong>60+</strong><span>studios guided</span></li>
-        <li><strong>$140M</strong><span>launch revenue steered</span></li>
-        <li><strong>11 yrs</strong><span>on the trail</span></li>
+        <li><strong>200M+</strong><span>views built</span></li>
+        <li><strong>180+</strong><span>games campaigned</span></li>
+        <li><strong>15M+</strong><span>in one channel's first 90 days</span></li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- ============================================================ TRUST BAR -->
-<section class="trustbar" aria-label="Featured in">
+<section class="trustbar" aria-label="Games worked on">
   <div class="shell">
-    <!-- PLACEHOLDER OUTLETS. All six are fictional. Replace with outlets that
-         actually covered you — real publication logos are trademarks, and an
-         unearned press bar is a false-endorsement claim. -->
-    <p class="trustbar__label">Dispatches from the road, published by</p>
+    <!-- PLACEHOLDER TITLES. All six games are fictional. Swap in real titles you
+         have permission to name, or delete the section — a logo bar you haven't
+         earned is an endorsement claim. -->
+    <p class="trustbar__label">A few of the 180+</p>
     <ul class="trustbar__logos">
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Lootline Weekly (placeholder)">
-          <circle cx="15" cy="17" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
-          <path d="M15 8 L23 17 L15 26 L7 17 Z" fill="currentColor"/>
-          <text x="34" y="23" class="logo-type">LOOTLINE</text>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Hollowfen (placeholder)">
+          <path d="M13 6 L23 17 L13 28 L3 17 Z" fill="currentColor"/>
+          <text x="30" y="23" class="logo-type">HOLLOWFEN</text>
         </svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Playhead (placeholder)">
-          <path d="M4 8 h22 l-11 20 Z" fill="currentColor"/>
-          <text x="32" y="23" class="logo-type">PLAYHEAD</text>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Ashvault (placeholder)">
+          <path d="M4 26 L13 8 L22 26 Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+          <text x="29" y="23" class="logo-type">ASHVAULT</text>
         </svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="GameDev Quarterly (placeholder)">
-          <rect x="4" y="9" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/>
-          <path d="M9 17h8M13 13v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-          <text x="30" y="23" class="logo-type">GAMEDEV Q</text>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Tin Compass (placeholder)">
+          <circle cx="14" cy="17" r="10" fill="none" stroke="currentColor" stroke-width="2.6"/>
+          <path d="M14 9 L17 17 L14 25 L11 17 Z" fill="currentColor"/>
+          <text x="31" y="23" class="logo-type">TIN COMPASS</text>
         </svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Indie Beacon (placeholder)">
-          <path d="M13 6 L20 26 H6 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
-          <circle cx="13" cy="14" r="2.6" fill="currentColor"/>
-          <text x="28" y="23" class="logo-type">BEACON</text>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Nightmarket (placeholder)">
+          <rect x="6" y="9" width="16" height="16" rx="3" transform="rotate(45 14 17)" fill="none" stroke="currentColor" stroke-width="2.6"/>
+          <text x="32" y="23" class="logo-type">NIGHTMARKET</text>
         </svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="The Cartographer (placeholder)">
-          <path d="M5 17 a8 8 0 0 1 16 0 a8 8 0 0 1 -16 0" fill="none" stroke="currentColor" stroke-width="2.4"/>
-          <path d="M13 9 v16" stroke="currentColor" stroke-width="2.4"/>
-          <text x="28" y="23" class="logo-type">CARTOGRPHR</text>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Saltpetre (placeholder)">
+          <path d="M14 5 L17 14 L26 17 L17 20 L14 29 L11 20 L2 17 L11 14 Z" fill="currentColor"/>
+          <text x="31" y="23" class="logo-type">SALTPETRE</text>
         </svg>
       </li>
       <li>
-        <svg viewBox="0 0 150 34" role="img" aria-label="Sixteen Bits Podcast (placeholder)">
-          <rect x="5" y="10" width="6" height="14" fill="currentColor"/>
-          <rect x="14" y="6" width="6" height="18" fill="currentColor"/>
-          <rect x="23" y="14" width="6" height="10" fill="currentColor"/>
-          <text x="36" y="23" class="logo-type">16BITS</text>
+        <svg viewBox="0 0 150 34" role="img" aria-label="Wrenlight (placeholder)">
+          <path d="M5 25 L14 7 L23 25 Z M9 19 h10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+          <text x="30" y="23" class="logo-type">WRENLIGHT</text>
         </svg>
       </li>
     </ul>
@@ -435,19 +433,19 @@
 <!-- ============================================================ PACKAGES -->
 <section class="section packages" id="packages">
   <div class="shell">
-    <header class="section-head reveal">
+    <header class="section-head">
       <p class="eyebrow"><span class="eyebrow__rule"></span> Choose your loadout</p>
-      <h2 class="h2">Three ways to walk this</h2>
+      <h2 class="h2">Three ways to work together</h2>
       <p class="section-head__sub">
-        Same guide, different distance. Every route starts with the same free map reading —
-        we only pick a tier once we both know what the terrain actually looks like.
+        Same person doing the work either way — what changes is how long I'm on it. Every one
+        starts with me actually playing your game and telling you straight whether I can move it.
       </p>
     </header>
 
     <div class="tiers">
 
       <!-- EPIC -->
-      <article class="tier tier--epic reveal">
+      <article class="tier tier--epic">
         <div class="tier__emblem" aria-hidden="true">
           <svg viewBox="0 0 64 64">
             <circle class="em-glow" cx="32" cy="32" r="29"/>
@@ -458,22 +456,22 @@
           </svg>
         </div>
         <p class="tier__rarity">Epic</p>
-        <h3 class="tier__name">The Scouting Run</h3>
-        <p class="tier__blurb">One hard look at where you actually are, and the shortest honest route out.</p>
-        <p class="tier__price"><span class="tier__price-num">$3,400</span><span class="tier__price-unit">one-time</span></p>
+        <h3 class="tier__name">The Drop</h3>
+        <p class="tier__blurb">One game, one campaign. The clearest way to find out what your game does in the wild.</p>
+        <p class="tier__scope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg> One game · one campaign</p>
         <ul class="tier__list">
-          <li>Full launch-readiness audit</li>
-          <li>Store page + capsule teardown</li>
-          <li>Wishlist trajectory model</li>
-          <li>90-minute strategy walkthrough</li>
-          <li>Written route map, yours to keep</li>
+          <li>I play it and find the hook</li>
+          <li>Short-form cut for the drop</li>
+          <li>Thumbnail built and tested</li>
+          <li>Posted across the channels</li>
+          <li>Numbers back, no spin</li>
         </ul>
-        <a class="btn btn--outline btn--block" href="#newsletter">Take the scouting run</a>
-        <p class="tier__foot">Delivered in 2 weeks · 4 slots a month</p>
+        <a class="btn btn--outline btn--block" href="mailto:joel@example.com">Send me your game</a>
+        <p class="tier__foot">A few slots a month</p>
       </article>
 
       <!-- LEGENDARY -->
-      <article class="tier tier--legendary tier--popular reveal">
+      <article class="tier tier--legendary tier--popular">
         <p class="tier__flag">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8Z"/></svg>
           Most chosen
@@ -491,23 +489,23 @@
           </svg>
         </div>
         <p class="tier__rarity">Legendary</p>
-        <h3 class="tier__name">The Full Campaign</h3>
-        <p class="tier__blurb">I'm in the room from reveal to day thirty. Strategy, beats, and someone to blame.</p>
-        <p class="tier__price"><span class="tier__price-num">$7,900</span><span class="tier__price-unit">/ month</span></p>
+        <h3 class="tier__name">The Run</h3>
+        <p class="tier__blurb">A run of content around your beats — announce, demo, launch — instead of one shot in the dark.</p>
+        <p class="tier__scope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg> Ongoing · month to month</p>
         <ul class="tier__list">
-          <li>Everything in <strong>Epic</strong></li>
-          <li>Beat-by-beat launch calendar</li>
-          <li>Press &amp; creator outreach strategy</li>
-          <li>Weekly working session with me</li>
-          <li>Direct line, same-day answers</li>
-          <li>Day-one war room</li>
+          <li>Everything in <strong>Epic</strong>, repeatedly</li>
+          <li>Content mapped to your beats</li>
+          <li>Thumbnail and hook iteration</li>
+          <li>What worked, fed into the next cut</li>
+          <li>Direct line to me, not a queue</li>
+          <li>Launch week covered properly</li>
         </ul>
-        <a class="btn btn--primary btn--block" href="#newsletter">Start the campaign</a>
-        <p class="tier__foot">6-month minimum · 2 studios at a time</p>
+        <a class="btn btn--primary btn--block" href="mailto:joel@example.com">Start a run</a>
+        <p class="tier__foot">Two games at a time, so it stays good</p>
       </article>
 
       <!-- MYTHICAL -->
-      <article class="tier tier--mythical reveal">
+      <article class="tier tier--mythical">
         <div class="tier__emblem" aria-hidden="true">
           <svg viewBox="0 0 64 64">
             <circle class="em-glow" cx="32" cy="33" r="30"/>
@@ -523,19 +521,19 @@
           </svg>
         </div>
         <p class="tier__rarity">Mythical</p>
-        <h3 class="tier__name">The Guild Contract</h3>
-        <p class="tier__blurb">For studios with a slate. I hold the map across every title you ship this cycle.</p>
-        <p class="tier__price"><span class="tier__price-num">from $21k</span><span class="tier__price-unit">/ quarter</span></p>
+        <h3 class="tier__name">The Guild</h3>
+        <p class="tier__blurb">For publishers and brands with a slate. I take the whole cycle, not one title at a time.</p>
+        <p class="tier__scope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 12 L12 22 L4 12 Z"/></svg> Multi-title · by conversation</p>
         <ul class="tier__list">
           <li>Everything in <strong>Legendary</strong></li>
-          <li>Multi-title portfolio sequencing</li>
-          <li>Publisher &amp; platform negotiation support</li>
-          <li>Team training — your people, my playbook</li>
-          <li>Board &amp; investor narrative</li>
-          <li>On-site at two events a year</li>
+          <li>Sequencing across your whole slate</li>
+          <li>Creator briefs your partners can follow</li>
+          <li>Your team trained on the process</li>
+          <li>First look at what's landing right now</li>
+          <li>Long-term, not campaign by campaign</li>
         </ul>
-        <a class="btn btn--outline btn--block" href="#newsletter">Enquire about the guild</a>
-        <p class="tier__foot">By conversation only · 1 open slot</p>
+        <a class="btn btn--outline btn--block" href="mailto:joel@example.com">Let's talk</a>
+        <p class="tier__foot">One open slot</p>
       </article>
     </div>
   </div>
@@ -550,86 +548,85 @@
 <!-- ============================================================ TESTIMONIAL WALL -->
 <section class="section proof" id="proof">
   <div class="shell">
-    <header class="section-head reveal">
+    <header class="section-head">
       <p class="eyebrow"><span class="eyebrow__rule"></span> Fellow travellers</p>
-      <h2 class="h2">Everyone who made it out</h2>
+      <h2 class="h2">Devs who let me near their game</h2>
       <p class="section-head__sub">Studio leads, solo devs, and one very tired publishing director.</p>
     </header>
 
     <div class="wall">
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>We had 4,000 wishlists and eight weeks. Rowan rebuilt the whole beat plan in a weekend. We hit 61,000 by launch.</blockquote>
-        <figcaption><strong>Mara Ostrowska</strong><span>Creative Director, Hollowfen Games</span></figcaption>
+        <blockquote>He played the whole thing before he cut a frame. You can tell — the video sells the game we actually made.</blockquote>
+        <figcaption><strong>Mara Ostrowska</strong><span>Creative Director, Hollowfen</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>The first call was uncomfortable in the way a good doctor's appointment is uncomfortable. Worth every minute.</blockquote>
+        <blockquote>Two thumbnails. One did 40k, the other did 2.1M. Same video. That's the whole job, and he just knows.</blockquote>
         <figcaption><strong>Devin Achebe</strong><span>Founder, Two Lantern Studio</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>I've hired three agencies. This was the first time someone told me to cut something instead of adding a channel.</blockquote>
+        <blockquote>I've paid agencies ten times this for content nobody watched. Joel's first cut outperformed all of it.</blockquote>
         <figcaption><strong>Priya Raghunathan</strong><span>COO, Nightmarket Interactive</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>Our Steam page conversion went from 3.1% to 9.4% off a two-hour teardown. That's the whole story.</blockquote>
+        <blockquote>He told me my game didn't have a hook yet and to come back after the update. He was right, and it cost him the booking.</blockquote>
         <figcaption><strong>Jonas Vikström</strong><span>Marketing Lead, Ashvault</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>He talked us out of a $90k influencer spend and into a demo. The demo did more than the money would have.</blockquote>
+        <blockquote>Wishlists went from 300 a week to 9,000 in the four days after the video went up.</blockquote>
         <figcaption><strong>Elena Marchetti</strong><span>CEO, Saltpetre Collective</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="4 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star star--empty" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>Brutally direct. I didn't enjoy week one. I did enjoy the sales chart.</blockquote>
+        <blockquote>Fast, blunt, occasionally hard to reach mid-edit. Worth it every time the numbers land.</blockquote>
         <figcaption><strong>Tomás Reyes</strong><span>Solo dev, Verdigris</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>Twelve years in publishing and I still took four pages of notes on the first call.</blockquote>
+        <blockquote>Twelve years in publishing and I still took notes on how he structures the first three seconds.</blockquote>
         <figcaption><strong>Karin Boedeker</strong><span>Publishing Director, Grauwald</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>We were three weeks from announcing into the worst possible window. He moved us. Best call anyone made that year.</blockquote>
+        <blockquote>We'd been posting our own clips for a year. He explained in one call why none of them opened properly.</blockquote>
         <figcaption><strong>Ade Ogunleye</strong><span>Studio Head, Bright Hollow</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>No account manager, no deck, no upsell. Just the person who knows the answer, on the call.</blockquote>
+        <blockquote>No account manager, no deck, no upsell. The person who cuts the video is the person on the call.</blockquote>
         <figcaption><strong>Hana Little</strong><span>Producer, Ninefold</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>Our second game outsold the first by 7x on a smaller budget. Same team. Different map.</blockquote>
+        <blockquote>Second game outsold the first by 7× on a smaller budget. Same team, better content.</blockquote>
         <figcaption><strong>Lukas Brenner</strong><span>Co-founder, Tin Compass</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>Day one felt boring. Everything had already been decided six months earlier. That's the point, apparently.</blockquote>
+        <blockquote>He sent the numbers that underperformed without me asking. That's when I knew I'd keep working with him.</blockquote>
         <figcaption><strong>Siobhán Kelly</strong><span>Director, Wrenlight</span></figcaption>
       </figure>
 
-      <figure class="quote reveal">
+      <figure class="quote">
         <div class="stars" role="img" aria-label="5 out of 5"><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg><svg class="star" viewBox="0 0 24 24"><use href="#starPath"/></svg></div>
-        <blockquote>I came for the wishlist numbers. I stayed because someone finally told me the truth about our trailer.</blockquote>
+        <blockquote>I came for the views. I stayed because someone finally told me the truth about our trailer.</blockquote>
         <figcaption><strong>Yuki Tanabe</strong><span>Art Director, Paper Lantern</span></figcaption>
       </figure>
-
     </div>
   </div>
 </section>
@@ -646,66 +643,66 @@
 <!-- ============================================================ CASE STUDIES -->
 <section class="section quests" id="quests">
   <div class="shell">
-    <header class="section-head reveal">
+    <header class="section-head">
       <p class="eyebrow"><span class="eyebrow__rule"></span> Completed quests</p>
-      <h2 class="h2">Where the map led</h2>
-      <p class="section-head__sub">Six routes, six very different kinds of trouble.</p>
+      <h2 class="h2">What the numbers did</h2>
+      <p class="section-head__sub">Six games, six very different problems.</p>
     </header>
 
     <div class="quest-grid">
 
-      <a class="quest reveal" href="#">
+      <a class="quest" href="#">
         <span class="quest__sigil" aria-hidden="true">
           <svg viewBox="0 0 40 40"><path d="M20 3 L34 20 L20 37 L6 20 Z"/><path d="M20 11 L27 20 L20 29 L13 20 Z" class="sigil-inner"/></svg>
         </span>
         <h3 class="quest__name">Hollowfen</h3>
-        <p class="quest__result">4k → 61k wishlists in eight weeks before a delayed launch.</p>
-        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="quest__result">One video, 4.2M views. Wishlists 4k → 61k in eight weeks.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
-      <a class="quest reveal" href="#">
+      <a class="quest" href="#">
         <span class="quest__sigil" aria-hidden="true">
           <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M20 6 L25 20 L20 34 L15 20 Z" class="sigil-inner"/></svg>
         </span>
         <h3 class="quest__name">Ashvault</h3>
-        <p class="quest__result">Store conversion 3.1% → 9.4% from a single page teardown.</p>
-        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="quest__result">Thumbnail rebuilt and retested. Click-through 2.1% → 9.4%.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
-      <a class="quest reveal" href="#">
+      <a class="quest" href="#">
         <span class="quest__sigil" aria-hidden="true">
           <svg viewBox="0 0 40 40"><path d="M20 4 L36 13 V27 L20 36 L4 27 V13 Z"/><path d="M20 13 L28 17.5 V24 L20 28 L12 24 V17.5 Z" class="sigil-inner"/></svg>
         </span>
         <h3 class="quest__name">Saltpetre Collective</h3>
-        <p class="quest__result">Killed a $90k creator spend, shipped a demo, tripled the funnel.</p>
-        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="quest__result">Told them to cut the ad spend and ship a demo instead. Funnel tripled.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
-      <a class="quest reveal" href="#">
+      <a class="quest" href="#">
         <span class="quest__sigil" aria-hidden="true">
           <svg viewBox="0 0 40 40"><path d="M6 30 L20 5 L34 30 Z"/><path d="M14 30 L20 18 L26 30 Z" class="sigil-inner"/></svg>
         </span>
         <h3 class="quest__name">Tin Compass</h3>
         <p class="quest__result">Second title outsold the first 7× on 40% of the budget.</p>
-        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
-      <a class="quest reveal" href="#">
+      <a class="quest" href="#">
         <span class="quest__sigil" aria-hidden="true">
           <svg viewBox="0 0 40 40"><path d="M20 4 L24 16 L36 20 L24 24 L20 36 L16 24 L4 20 L16 16 Z"/></svg>
         </span>
         <h3 class="quest__name">Bright Hollow</h3>
-        <p class="quest__result">Moved a reveal out of a crowded window. 3× the coverage.</p>
-        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="quest__result">Reveal moved out of a crowded week. 3× the reach.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
-      <a class="quest reveal" href="#">
+      <a class="quest" href="#">
         <span class="quest__sigil" aria-hidden="true">
           <svg viewBox="0 0 40 40"><rect x="7" y="7" width="26" height="26" rx="4" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="5" class="sigil-inner"/></svg>
         </span>
         <h3 class="quest__name">Nightmarket</h3>
-        <p class="quest__result">Cut four channels to one. Cost per wishlist fell 68%.</p>
-        <span class="quest__link">Read the route <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="quest__result">Four platforms cut to one. Cost per wishlist fell 68%.</p>
+        <span class="quest__link">See the numbers <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
     </div>
@@ -715,17 +712,17 @@
 <!-- ============================================================ DISPATCHES -->
 <section class="section dispatches" id="dispatches">
   <div class="shell">
-    <header class="section-head section-head--row reveal">
+    <header class="section-head section-head--row">
       <div>
-        <p class="eyebrow"><span class="eyebrow__rule"></span> Dispatches</p>
-        <h2 class="h2">Notes from the trail</h2>
+        <p class="eyebrow"><span class="eyebrow__rule"></span> Notes</p>
+        <h2 class="h2">Things I keep having to explain</h2>
       </div>
-      <a class="link-arrow" href="#">View all dispatches <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="link-arrow" href="#">All notes <svg class="ico ico--sm" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </header>
 
     <div class="posts">
 
-      <article class="post reveal">
+      <article class="post">
         <div class="post__art" aria-hidden="true">
           <svg viewBox="0 0 400 220" preserveAspectRatio="none">
             <rect width="400" height="220" class="pa-bg"/>
@@ -735,13 +732,13 @@
             <path d="M40 60 h44 M40 76 h28" class="pa-mark"/>
           </svg>
         </div>
-        <p class="post__meta">Steam · 9 min read</p>
-        <h3 class="post__title">The wishlist number that actually predicts your launch</h3>
-        <p class="post__excerpt">It isn't the total. It's the slope in the fourteen days after your last beat — and almost nobody tracks it.</p>
-        <span class="post__link">Read dispatch <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="post__meta">Thumbnails · 9 min read</p>
+        <h3 class="post__title">Your thumbnail is doing 90% of the work</h3>
+        <p class="post__excerpt">Same video, two thumbnails, a 50× gap in views. Here's what I actually change between the two.</p>
+        <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </article>
 
-      <article class="post reveal">
+      <article class="post">
         <div class="post__art" aria-hidden="true">
           <svg viewBox="0 0 400 220" preserveAspectRatio="none">
             <rect width="400" height="220" class="pa-bg"/>
@@ -750,13 +747,13 @@
             <path d="M200 40 L216 74 L252 80 L226 106 L232 142 L200 124 L168 142 L174 106 L148 80 L184 74 Z" class="pa-orb"/>
           </svg>
         </div>
-        <p class="post__meta">Press · 6 min read</p>
-        <h3 class="post__title">Why your press email gets deleted in four seconds</h3>
-        <p class="post__excerpt">I asked eleven editors to forward me the pitches they ignored. The pattern was depressingly consistent.</p>
-        <span class="post__link">Read dispatch <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="post__meta">Hooks · 6 min read</p>
+        <h3 class="post__title">The first three seconds decide the other ninety</h3>
+        <p class="post__excerpt">Most indie clips open by explaining. The ones that travel open by showing the weirdest thing in the game.</p>
+        <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </article>
 
-      <article class="post reveal">
+      <article class="post">
         <div class="post__art" aria-hidden="true">
           <svg viewBox="0 0 400 220" preserveAspectRatio="none">
             <rect width="400" height="220" class="pa-bg"/>
@@ -766,10 +763,10 @@
             <path d="M300 50 l12 22 l-24 0 Z" class="pa-mark-fill"/>
           </svg>
         </div>
-        <p class="post__meta">Timing · 12 min read</p>
-        <h3 class="post__title">Every launch window is bad. Pick the right kind of bad.</h3>
-        <p class="post__excerpt">There is no empty week. There are only weeks where the noise is shaped like you, and weeks where it isn't.</p>
-        <span class="post__link">Read dispatch <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="post__meta">Campaigns · 12 min read</p>
+        <h3 class="post__title">Why I turn down games I actually like</h3>
+        <p class="post__excerpt">A campaign can't manufacture a hook that isn't in the game yet. Taking the money anyway helps nobody.</p>
+        <span class="post__link">Read it <svg class="ico ico--xs" viewBox="0 0 24 24"><path d="M5 12h13M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </article>
 
     </div>
@@ -780,12 +777,13 @@
 <section class="newsletter" id="newsletter">
   <div class="shell newsletter__inner">
 
-    <div class="newsletter__copy reveal">
+    <div class="newsletter__copy">
       <p class="eyebrow eyebrow--onart"><span class="eyebrow__rule"></span> The signal fire</p>
-      <h2 class="h2">One dispatch. Every other Thursday.</h2>
+      <h2 class="h2">One note. Every other Thursday.</h2>
       <p>
-        A single hard-won lesson from a live launch, written the week it happened. No roundups,
-        no sponsors, no "5 tips." 6,400 developers read it. You can leave whenever you like.
+        One thing I learned from a live campaign, written the week it happened — what the
+        thumbnail did, what the hook did, what flopped. No roundups, no sponsors, no "5 tips."
+        Leave whenever you like.
       </p>
       <form class="signup" id="signupForm" novalidate>
         <label class="sr-only" for="email">Email address</label>
@@ -797,7 +795,7 @@
       </form>
     </div>
 
-    <div class="newsletter__art reveal" aria-hidden="true">
+    <div class="newsletter__art" aria-hidden="true">
       <svg viewBox="0 0 420 360">
         <defs>
           <radialGradient id="beaconGlow" cx="50%" cy="42%">
@@ -860,24 +858,24 @@
             <path d="M20 9.5 L28.5 20 L20 30.5 L11.5 20 Z" class="mark-inner"/>
             <path d="M20 14 L23 20 L20 26 L17 20 Z" class="mark-core"/>
           </svg>
-          <span class="brand__text">Wayfinder<span class="brand__dot">.</span></span>
+          <span class="brand__text">Joel<span class="brand__dot">.</span></span>
         </a>
-        <p class="footer__tagline">Nobody makes it out of the wilderness on vibes and a trailer.</p>
-        <a class="footer__email" href="mailto:rowan@wayfinder.gg">rowan@wayfinder.gg</a>
+        <p class="footer__tagline">Great games don't travel on their own. That's the whole job.</p>
+        <a class="footer__email" href="mailto:joel@example.com">joel@example.com</a>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
         <div>
-          <h3>The path</h3>
-          <a href="#packages">Packages</a>
-          <a href="#quests">Case studies</a>
-          <a href="#proof">Testimonials</a>
+          <h3>Work</h3>
+          <a href="#packages">Ways to work</a>
+          <a href="#quests">Results</a>
+          <a href="#proof">What devs say</a>
         </div>
         <div>
-          <h3>Along the way</h3>
-          <a href="#dispatches">Dispatches</a>
+          <h3>More</h3>
+          <a href="#dispatches">Notes</a>
           <a href="#newsletter">Newsletter</a>
-          <a href="#guide">About Rowan</a>
+          <a href="#guide">About Joel</a>
         </div>
         <div>
           <h3>The small print</h3>
@@ -889,7 +887,7 @@
     </div>
 
     <div class="footer__bottom">
-      <p>© <span id="year">2026</span> Wayfinder Consulting Ltd. Made on a long walk.</p>
+      <p>© <span id="year">2026</span> Joel. Made between edits.</p>
       <ul class="socials">
         <li><a href="#" aria-label="Bluesky">
           <svg viewBox="0 0 24 24"><path d="M12 10.6C10.8 8.2 7.6 4 5 3.2 2.6 2.5 2 3.6 2 5.2c0 1.5.9 6.3 1.4 7.1.9 1.3 2.4 1.5 3.8 1.2-2.4.4-3 1.9-1.7 3.4 2.6 2.9 3.7-.7 4-1.6.1-.2.1-.3.2-.3.1 0 .1.1.2.3.3.9 1.4 4.5 4 1.6 1.3-1.5.7-3-1.7-3.4 1.4.3 2.9.1 3.8-1.2.5-.8 1.4-5.6 1.4-7.1 0-1.6-.6-2.7-3-2C16.4 4 13.2 8.2 12 10.6Z"/></svg>

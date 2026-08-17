@@ -1,7 +1,7 @@
 # assets
 
-Drop `portrait.jpg` in here — the single photograph on the page, used in the
-bio section. Everything else on the site is custom SVG drawn inline in
+Drop `portrait.jpg` in here — a photo of Joel, and the single photograph on
+the page. Used in the bio section. Everything else on the site is custom SVG drawn inline in
 `index.html`.
 
 - **Aspect ratio:** 5 : 6 (portrait). The frame is `object-fit: cover`, so

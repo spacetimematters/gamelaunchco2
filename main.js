@@ -1,13 +1,13 @@
 /* =============================================================
-   Wayfinder — page behaviour
-   Theme switching, sticky nav state, scroll reveals, signup form.
+   Page behaviour
+   Theme switching, sticky nav state, signup form.
    ============================================================= */
 
 (function () {
   'use strict';
 
   var root = document.documentElement;
-  var STORE_KEY = 'wayfinder-theme';
+  var STORE_KEY = 'site-theme';
 
   /* ---------------------------------------------------- theme toggle */
 
@@ -62,30 +62,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------------------------------------------------- scroll reveal */
-
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var targets = document.querySelectorAll('.reveal');
-
-  if (reduced || !('IntersectionObserver' in window)) {
-    targets.forEach(function (el) { el.classList.add('is-in'); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var el = entry.target;
-        // Stagger siblings so grids and the testimonial wall arrive in sequence.
-        var siblings = Array.prototype.slice.call(el.parentNode.children);
-        var i = siblings.indexOf(el);
-        el.style.transitionDelay = Math.min(i, 6) * 60 + 'ms';
-        el.classList.add('is-in');
-        io.unobserve(el);
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
-    targets.forEach(function (el) { io.observe(el); });
-  }
-
   /* -------------------------------------------------------- signup */
 
   var form = document.getElementById('signupForm');
@@ -110,7 +86,7 @@
       // No backend wired up yet — point this at the mail provider of choice.
       input.removeAttribute('aria-invalid');
       msg.setAttribute('data-state', 'ok');
-      msg.textContent = 'Beacon lit. The next dispatch finds you on Thursday.';
+      msg.textContent = 'Beacon lit. The next note finds you on Thursday.';
       form.reset();
     });
 
